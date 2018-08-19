@@ -1,0 +1,15 @@
+.container-fluid{
+      background-color: #252874;
+      height: 80px;
+      }
+.navbar-default .navbar-nav>li>a{
+  color:#fff;
+}
+
+ul .nav .navbar-nav{
+  padding: 50px;
+}
+
+/* .logo{
+  border-radius: 260px
+} */

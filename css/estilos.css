@@ -1,14 +1,31 @@
+
+
+*{box-sizing:  border-box;}
+
 .container-fluid{
       background-color: #252874;
       height: 80px;
       }
-.navbar-default .navbar-nav>li>a{
-  color:#fff;
+
+
+
+header{
+
+  padding: 15px;
+  text-align: center;
+
+}
+a{
+  margin-top: 20px;
+  color: white;
+  text-decoration:none;
+  outline:none; /* retira as bodas do click  */
 }
 
-ul .nav .navbar-nav{
-  padding: 50px;
-}
+
+
+
+
 
 /* .logo{
   border-radius: 260px

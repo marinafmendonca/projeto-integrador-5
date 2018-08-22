@@ -1,0 +1,25 @@
+*{box-sizing:  border-box;}
+
+body{
+  background-image: url("../image/fachada1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#logo{
+
+}
+
+.btn{
+  background-color: rgba(25,18,74,0.8);
+  color: white;
+  width: 200px;
+}
+
+
+
+.container{
+  background-color: rgba(255,255,255,0.6);
+}

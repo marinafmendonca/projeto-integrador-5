@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="br-pt" dir="ltr">
 
 <head>
   <meta charset="utf-8">
@@ -49,10 +49,10 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Logar</h5>
-              <img class="logoCadastro" src="image/logoCadasto.jpg" alt="talkHouse">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <img class="logoCadastro" src="image/logoCadastro.png" alt="talkHouse">
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+              </button> -->
 
             </div>
             <div class="modal-body">
@@ -75,14 +75,8 @@
                 <small class="form-text"><a href="#">Esqueceu a sua senha?</a></small>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Entrar</button>
-
-
-
-
-
-
-
+                <a href="#" class="btn btn-primary">Entrar</a>
+                <a href="home.php" class="btn btn-primary">voltar</a>
               </div>
             </div>
           </div>

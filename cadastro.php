@@ -48,10 +48,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Cadastrar</h5>
-                        <img src="image/logoCadasto.jpg" style="height: 10%; width: 10%;" alt="talkHouse">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="image/logoCadastro.png" style="height: 10%; width: 10%;" alt="talkHouse">
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
+                        </button> -->
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
@@ -85,7 +85,8 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Confirmar</button>
+                        <a href="#" class="btn btn-primary">Confirmar</a>
+                        <a href="home.php" class="btn btn-primary">voltar</a>
 
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="br-pt" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -14,8 +14,8 @@
       <h2 class="text-center">Bem-vindo à talkHouse</h2>
       <h3 class="text-center">A talkHouse é a rede social de alunos e professores da Digital House</h3>
       <div class="text-center my-5">
-        <button class="btn btn-lg" type="button" name="button">Logar</button>
-        <button class="btn btn-lg" type="button" name="button">Cadastrar</button>
+        <a href="login.php" class="btn btn-lg"  >Logar</a>
+        <a href="cadastro.php" class="btn btn-lg" >Cadastrar</a>
       </div>
     </div>
   </body>

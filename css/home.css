@@ -1,15 +1,31 @@
 *{box-sizing:  border-box;}
 
-body{
-  background-image: url("../image/fachada1.jpg");
+/* body{
+   background-image: url("../image/colearning1.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+} */
+
+@keyframes change-bg {
+  5% {background-image: url("../image/colearning1.jpg");}
+  50% {background-image: url("../image/colearning2.jpg");}
+  80% {background-image: url("../image/colearning3.jpg");}
 }
 
-#logo{
+body{
+  background-image: url("../image/colearning1.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: change-bg;
+  animation-fill-mode: forwards;
 
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
 .btn{

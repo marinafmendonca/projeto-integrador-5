@@ -7,7 +7,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/estilos.css">
-    <title>talkHouse</title>
+    <title >talkHouse</title>
   </head>
   <body>
     <footer>
@@ -84,7 +84,7 @@
                     <a href="#!">Política de Privacidade</a>
                   </li>
                   <li>
-                    <a href="#!">Cookies</a>
+                    <a href="faq.php">Faq</a>
                   </li>
               </ul>
 

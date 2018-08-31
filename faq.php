@@ -35,9 +35,9 @@
     </div>
     <div class="card">
       <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo id="
-        headingTwo ">
+        headingTwo>
         <h5 class="mb-0 ">
-          <button class="btn btn-link " ">
+          <button class="btn btn-link ">
         Como criar uma conta?
         </button>
         </h5>

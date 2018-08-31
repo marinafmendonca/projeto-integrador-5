@@ -12,7 +12,6 @@
   <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
 </head>
 
-
 <body>
   <?php include_once 'header.php'; ?>
   <h1 class="container text-center my-5">FAQ</h1>
@@ -21,9 +20,7 @@
       <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
         aria-controls="collapseOne">
         <h5 class="mb-0">
-          <button class="btn btn-link">
             O que é o talkHouse?
-          </button>
         </h5>
       </div>
 
@@ -34,12 +31,10 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo id="
-        headingTwo>
+      <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="
+        headingTwo ">
         <h5 class="mb-0 ">
-          <button class="btn btn-link ">
         Como criar uma conta?
-        </button>
         </h5>
       </div>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -53,9 +48,7 @@
       <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
         aria-controls="collapseThree">
         <h5 class="mb-0">
-          <button class="btn btn-link">
             Quem pode criar uma conta?
-          </button>
         </h5>
       </div>
       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -69,9 +62,7 @@
       <div class="card-header collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
         aria-controls="collapseFour">
         <h5 class="mb-0">
-          <button class="btn btn-link">
             Há algum custo para a criação da conta?
-          </button>
         </h5>
       </div>
       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -85,9 +76,7 @@
       <div class="card-header collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
         aria-controls="collapseFive">
         <h5 class="mb-0">
-          <button class="btn btn-link">
             Qual o objetivo do talkHouse?
-          </button>
         </h5>
       </div>
       <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
@@ -101,9 +90,7 @@
       <div class="card-header collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
         aria-controls="collapseSix">
         <h5 class="mb-0">
-          <button class="btn btn-link">
             Como posso me inscrever num curso da Digital House?
-          </button>
         </h5>
       </div>
       <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
@@ -117,9 +104,7 @@
       <div class="card-header collapsed" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
         aria-controls="collapseSeven">
         <h5 class="mb-0">
-          <button class="btn btn-link">
             Há alguma forma de entrar em contato com vocês?
-          </button>
         </h5>
       </div>
       <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
@@ -133,9 +118,7 @@
       <div class="card-header collapsed" id="headingEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false"
         aria-controls="collapseEight">
         <h5 class="mb-0">
-          <button class="btn btn-link">
             Quem pode criar uma conta?
-          </button>
         </h5>
       </div>
       <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">

@@ -14,14 +14,14 @@
       <img id="bg2"src="../image/fachada1.jpg" alt="fachada"> -->
     <div class="container mt-5 p-2">
       <div class="text-center my-4">
-        <img id="logo" class="img-fluid" src="image/logomarca.jpg" alt="logo">
+        <img id="logo" class="img-fluid" src="image/logo.png" alt="logo">
       </div>
       <h2 class="text-center">Bem-vindo à talkHouse</h2>
       <h3 class="text-center">A talkHouse é a rede social de alunos e professores da Digital House</h3>
       <div class="text-center my-5">
         <a href="login.php" class="btn btn-lg"  >Logar</a>
         <a href="cadastro.php" class="btn btn-lg" >Cadastrar</a>
-        
+
       </div>
     </div>
 

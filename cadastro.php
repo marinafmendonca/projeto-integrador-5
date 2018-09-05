@@ -43,7 +43,7 @@
 
     <div class="transparencia"></div>
 
-    <form>
+    <form action="usuario.php" method="post" enctype="multipart/form-data">
 
         <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -71,13 +71,19 @@
                         <div class="form-group row">
                             <label for="senha" class="col-sm-2 col-form-label">Senha</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="senha" placeholder="">
+                                <input type="password" class="form-control" id="senha">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="confirmaSenha" class="col-sm-2 col-form-label">Confirmar Senha</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="confirmaSenha" placeholder="">
+                                <input type="password" class="form-control" id="confirmaSenha">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="upload-foto" class="col-sm-2 col-form-label">Envie sua foto</label>
+                            <div class="col-sm-10">
+                                <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
                             </div>
                         </div>
 
@@ -87,12 +93,13 @@
                     </div>
 
                         <div class="modal-footer">
-                            <a href="#" class="btn btn-primary">Confirmar</a>
-                            <a href="home.php" class="btn btn-primary">voltar</a>
+                            <input type="submit" class="btn btn-primary">
+                            <!-- <a href="#" class="btn btn-primary">Confirmar</a> -->
+                            <a href="home.php" class="btn btn-primary">Voltar</a>
 
                         </div>
                     </div>
-               
+
                 </div>
 
 
@@ -188,12 +195,12 @@
 <!-- Copyright -->
 
 </footer>
+              </div>
             </form>
-        </div>
 
 
 
-   
+
 </body>
 
 </html>

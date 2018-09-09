@@ -44,7 +44,13 @@
     <div class="transparencia"></div>
 
     <form action="usuario.php" method="post" enctype="multipart/form-data">
-
+      <?php
+      if ($_POST){
+        if($_POST['senha'] != $_POST['confirma-senha']){
+          echo "<p> Senha não é compativel </p>";
+      }
+      }
+       ?>
         <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -59,29 +65,31 @@
                         <div class="form-group row">
                             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nome" name="nome" value="" required autofocus>
+                                <input required placeholder="Nome" type="text" class="form-control" id="nome" name="nome"  value='<?php echo
+                                 isset($_POST['name'])?$_POST['name']:''; ?>' required autofocus>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" placeholder="usuario@e-mail.com.br">
+                                <input required type="email" class="form-control" id="email" placeholder="usuario@e-mail.com.br"  value='<?php echo
+                                 isset($_POST['email'])?$_POST['email']:''; ?>'>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="senha" class="col-sm-2 col-form-label">Senha</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="senha">
+                                <input required type="password" class="form-control" id="senha">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="confirmaSenha" class="col-sm-2 col-form-label">Confirmar Senha</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="confirmaSenha">
+                                <input required type="password" class="form-control" id="confirmaSenha">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="upload-foto" class="col-sm-2 col-form-label">Envie sua foto</label>
+                            <label for="upload-foto" class="col-sm-2 col-form-label">Foto Login</label>
                             <div class="col-sm-10">
                                 <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
                             </div>
@@ -94,8 +102,8 @@
 
                         <div class="modal-footer">
                             <input type="submit" class="btn btn-primary">
-                            <!-- <a href="#" class="btn btn-primary">Confirmar</a> -->
-                            <a href="home.php" class="btn btn-primary">Voltar</a>
+                        <!-- <a href="#" class="btn btn-primary">Confirmar</a> -->
+                            <a href="home.php"class="btn btn-primary">Voltar</a>
 
                         </div>
                     </div>

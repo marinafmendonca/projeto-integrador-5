@@ -1,5 +1,5 @@
 .log{
-  color:rgb(25,18,74); 
+  color:rgb(25,18,74);
 }
 
 *{box-sizing:  border-box;}
@@ -63,6 +63,12 @@ a{
 }
 .text-center{
   color: rgb(25,18,74);
+}
+
+.fotoPerfil{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 

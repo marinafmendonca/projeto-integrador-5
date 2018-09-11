@@ -1,3 +1,11 @@
+<?php
+if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
+  if($_POST['senha'] != $_POST['confirmaSenha']){
+    header("Location:cadastro.php?error=true");
+  }
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

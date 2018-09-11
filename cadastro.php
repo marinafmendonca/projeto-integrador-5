@@ -45,11 +45,11 @@
 
     <form action="usuario.php" method="post" enctype="multipart/form-data">
       <?php
-      if ($_POST){
-        if($_POST['senha'] != $_POST['confirma-senha']){
-          echo "<p> Senha não é compativel </p>";
-      }
-      }
+      // if ($_POST){
+      //   if($_POST['senha'] != $_POST['confirma-senha']){
+      //     echo "<p> Senha não é compativel </p>";
+      // }
+      // }
        ?>
         <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -79,13 +79,18 @@
                         <div class="form-group row">
                             <label for="senha" class="col-sm-2 col-form-label">Senha</label>
                             <div class="col-sm-10">
-                                <input required type="password" class="form-control" id="senha">
+                                <input required type="password" class="form-control" name="senha" id="senha">
+                                <?php
+                                    if(isset($_GET['error'])){
+                                      echo '<span class="error">Senhas incompativeis</span>';
+                                    }
+                                 ?>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="confirmaSenha" class="col-sm-2 col-form-label">Confirmar Senha</label>
                             <div class="col-sm-10">
-                                <input required type="password" class="form-control" id="confirmaSenha">
+                                <input required type="password" class="form-control" name="confirmaSenha"  id="confirmaSenha">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -101,6 +106,7 @@
                     </div>
 
                         <div class="modal-footer">
+
                             <input type="submit" class="btn btn-primary">
                         <!-- <a href="#" class="btn btn-primary">Confirmar</a> -->
                             <a href="home.php"class="btn btn-primary">Voltar</a>

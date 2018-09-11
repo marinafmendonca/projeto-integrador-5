@@ -1,12 +1,15 @@
+."error"{
+  color: blue;
+}
 
 .btn{
     background-color: rgba(25,18,74,0.8);
     color: white;
     width: 200px;
   }
-  
-  
-  
+
+
+
   .container{
     background-color: white;
     width: 37%;

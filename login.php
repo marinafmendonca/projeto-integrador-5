@@ -25,7 +25,7 @@ if($_POST){
                   
                   //http://www.php.net/manual/pt_BR/function.setcookie.php
                   // parametros do setcookie usados aqui: 1 - nome do meu cookie, 
-                  //2 valor (coloquei vazio), 3 - tempo (coloquei data anterior ao dia atual)
+                  //2 valor (coloquei vazio), 3 - tempo (coloquei data anterior ao dia  atual)
                   
                   setcookie('email', '', time()-3600);
                 }

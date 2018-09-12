@@ -1,3 +1,48 @@
+
+<?php
+
+
+if($_POST){
+ 
+  
+    if(isset($_POST['email']) && isset($_POST['senha'])){
+      $arqJson = "usuario.json";
+      $conteudo = file_get_contents($arqJson);
+      $jsonParaArray = json_decode($conteudo, true);
+    
+     
+      foreach($jsonParaArray as $usuario){
+        foreach($usuario as $dados){
+              if($_POST['email'] === $dados['email'] && $_POST['senha']===$dados['senha']){
+               session_start();
+                $_SESSION['usuarioLogado'] = true;
+                $_SESSION['nomeUsuario'] = $dados["nome"];
+                $_SESSION['emailUsuario'] = $dados["email"];
+               
+                if(isset($_POST['lembrarUsuario'])) {
+                  setcookie("email", $_POST ["email"]);
+                }else{
+                  
+                  //http://www.php.net/manual/pt_BR/function.setcookie.php
+                  // parametros do setcookie usados aqui: 1 - nome do meu cookie, 
+                  //2 valor (coloquei vazio), 3 - tempo (coloquei data anterior ao dia atual)
+                  
+                  setcookie('email', '', time()-3600);
+                }
+                 header('location:\projeto-integrador-5\paginadepublicacao\index.php');
+              }
+        }
+      }
+      
+    }
+
+   
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="br-pt" dir="ltr">
 
@@ -45,7 +90,7 @@
   <div class="transparencia">
 
 
-    <form>
+    <form method="POST" action="login.php">
       <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -55,29 +100,32 @@
               <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button> -->
-
+              <?php
+                             
+             ?>
             </div>
             <div class="modal-body">
               <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">E-mail</label>
                 <div class="col-sm-12">
-                  <input type="email" class="form-control" id="email" placeholder="usuario@e-mail.com.br">
+                  <input type="email" class="form-control" name= "email" id="email" value="<?php echo @$_COOKIE["email"];?>"  placeholder="usuario@e-mail.com.br">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="senha" class="col-sm-2 col-form-label">Senha</label>
                 <div class="col-sm-12">
-                  <input type="password" class="form-control" id="senha" placeholder="">
+                  <input type="password" class="form-control" name= "senha" id="senha" placeholder="">
                 </div>
               </div>
 
               <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="lembrar-login">
+                <input type="checkbox" class="form-check-input" name= "lembrarUsuario"id="lembrar-login">
                 <label class="form-check-label" for="lembrar-login">Lembrar usuário?</label>
                 <small class="form-text"><a href="#">Esqueceu a sua senha?</a></small>
               </div>
               <div class="modal-footer">
-                <a href="#" class="btn btn-primary">Entrar</a>
+             
+              <input type="submit"  class="btn btn-primary" value ="Entrar" >
                 <a href="home.php" class="btn btn-primary">voltar</a>
               </div>
             </div>

@@ -57,7 +57,7 @@ if (isset($_FILES['fotoPerfil'])) {
 
     <div class="transparencia"></div>
 
-    <form action="usuario.php" method="post" enctype="multipart/form-data">
+    <form action="cadastro.php" method="post" enctype="multipart/form-data">
       <?php
       // if ($_POST){
       //   if($_POST['senha'] != $_POST['confirma-senha']){
@@ -80,13 +80,13 @@ if (isset($_FILES['fotoPerfil'])) {
                             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
                             <div class="col-sm-10">
                                 <input required placeholder="Nome" type="text" class="form-control" id="nome" name="nome"  value='<?php echo
-                                 isset($_POST['name'])?$_POST['name']:''; ?>' required autofocus>
+                                 isset($_POST['nome'])?$_POST['nome']:''; ?>' required autofocus>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input required type="email" class="form-control" id="email" placeholder="usuario@e-mail.com.br"  value='<?php echo
+                                <input required type="email" class="form-control" id="email" name="email" placeholder="usuario@e-mail.com.br"  value='<?php echo
                                  isset($_POST['email'])?$_POST['email']:''; ?>'>
                             </div>
                         </div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
   if($_POST['senha'] != $_POST['confirmaSenha']){
     header("Location:cadastro.php?error=true");
@@ -26,9 +27,6 @@ if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
           <?php
           //imprime imagem com nome no json ou session
           //echo "<img class='fotoPerfil img-fluid mb-2' src='image/$fotoName' alt='foto de perfil'>";
-          foreach ($_SESSION as $key => $value) {
-            echo "$key: $value";
-          }
             if (isset($_SESSION['nomeUsuario'])) {
               $nome=$_SESSION['nomeUsuario'];
               echo "<h3>$nome</h3>";

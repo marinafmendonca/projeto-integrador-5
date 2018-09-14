@@ -3,11 +3,6 @@
        {"id": 1, "nome": "adm","email":"leilaferreira@gmail.com", "senha":"1234"},
        {"id": 2, "nome": "Marina","email": "marina@gmail.com","senha":"1234"},
        {"id": 3, "nome": "Flavio","email": "flavio@gmail.com","senha":"1234"}
-       
-       ]
-     
-           
-   }
-   
-       
-       
+
+]
+}

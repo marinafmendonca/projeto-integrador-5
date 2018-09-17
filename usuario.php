@@ -1,10 +1,15 @@
 <?php
-if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
-  if($_POST['senha'] != $_POST['confirmaSenha']){
-    header("Location:cadastro.php?error=true");
-  }
-}
- ?>
+    session_start();
+    
+  
+    if (!isset($_SESSION['usuarioLogado']) || !isset(  $_SESSION['nomeUsuario'] )){
+        header('location:\projeto-integrador-5\home.php');
+        exit;
+    }
+
+    ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -24,29 +29,16 @@ if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
       <div class="row">
         <div class="col-lg-4 col-xl-4 text-center" style="border-right:2px solid rgb(200,200,200)">
           <?php
-          if (isset($_FILES['fotoPerfil'])) {
-            $foto = $_FILES['fotoPerfil'];
-            $fotoName = $foto['name'];
-            if ($foto['error'] === UPLOAD_ERR_OK) {
-              $path = "image/".$fotoName;
-              // if(file_exists($path)){
-              //   echo "Arquivo já existe";
-              // }
-              // else {
-                $ok = move_uploaded_file($foto['tmp_name'], $path);
-                if ($ok) {
-                  echo "<img class='fotoPerfil img-fluid mb-2' src='image/$fotoName' alt='foto de perfil'>";
-                }
-              // }
-            }
-          } else {
-            echo "<img class='fotoPerfil img-fluid mb-2' src='image/colearning1.JPG' alt='foto de perfil'>";
-          }
+              if (isset($_SESSION['FotoUsuario'])) {
+                echo "<img class='fotoPerfil img-fluid mb-2' src='".$_SESSION['FotoUsuario']."' alt='foto de perfil'>";
+              }else{
+                echo "<img class='fotoPerfil img-fluid mb-2' src='image/colearning1.JPG' alt='foto de perfil'>";
+              }
           ?>
           <?php
-            if (isset($_POST['nome'])) {
-              $nome=$_POST['nome'];
-              echo "<h3>$nome</h3>";
+            if (isset($_SESSION['nomeUsuario'])) {
+              $nome= $_SESSION['nomeUsuario'];
+              echo "<h2> $nome </h2>";
             }
             else echo "<h3>Nome Sobrenome</h3>";
            ?>

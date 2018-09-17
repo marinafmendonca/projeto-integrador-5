@@ -18,7 +18,8 @@ if($_POST){
                 $_SESSION['usuarioLogado'] = true;
                 $_SESSION['nomeUsuario'] = $dados["nome"];
                 $_SESSION['emailUsuario'] = $dados["email"];
-               
+                $_SESSION['FotoUsuario'] = $dados["caminhoFoto"];
+
                 if(isset($_POST['lembrarUsuario'])) {
                   setcookie("email", $_POST ["email"]);
                 }else{
@@ -35,11 +36,7 @@ if($_POST){
       }
       
     }
-
-   
 }
-
-
 ?>
 
 

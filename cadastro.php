@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -43,7 +45,7 @@
 
     <div class="transparencia"></div>
 
-    <form action="usuario.php" method="post" enctype="multipart/form-data">
+    <form action="controleCadastro.php" method="post" enctype="multipart/form-data">
       <?php
       // if ($_POST){
       //   if($_POST['senha'] != $_POST['confirma-senha']){
@@ -61,18 +63,27 @@
                             <span aria-hidden="true">&times;</span>
                         </button> -->
                     </div>
+                     <?php
+                                    if(isset($_GET['error'])){
+                                     
+                                        echo "<div class=\"alert alert-danger\" role=\"alert\">".$_GET['error']."</div>";
+                                  
+                                    }
+                                 ?>
                     <div class="modal-body">
                         <div class="form-group row">
+                                
+
                             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
                             <div class="col-sm-10">
                                 <input required placeholder="Nome" type="text" class="form-control" id="nome" name="nome"  value='<?php echo
-                                 isset($_POST['name'])?$_POST['name']:''; ?>' required autofocus>
+                                 isset($_POST['nome'])?$_POST['nome']:''; ?>' required autofocus>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input required type="email" class="form-control" id="email" placeholder="usuario@e-mail.com.br"  value='<?php echo
+                                <input required type="email" class="form-control" id="email" name="email" placeholder="usuario@e-mail.com.br"  value='<?php echo
                                  isset($_POST['email'])?$_POST['email']:''; ?>'>
                             </div>
                         </div>
@@ -80,11 +91,7 @@
                             <label for="senha" class="col-sm-2 col-form-label">Senha</label>
                             <div class="col-sm-10">
                                 <input required type="password" class="form-control" name="senha" id="senha">
-                                <?php
-                                    if(isset($_GET['error'])){
-                                      echo '<span class="error">Senhas incompativeis</span>';
-                                    }
-                                 ?>
+                                
                             </div>
                         </div>
                         <div class="form-group row">
@@ -107,10 +114,11 @@
 
                         <div class="modal-footer">
 
-                            <input type="submit" class="btn btn-primary">
-                        <!-- <a href="#" class="btn btn-primary">Confirmar</a> -->
-                            <a href="home.php"class="btn btn-primary">Voltar</a>
-
+                        <input type="submit" class="btn btn-primary">
+                        
+                        <a href="home.php"class="btn btn-primary">Voltar</a>
+                    
+                 
                         </div>
                     </div>
 

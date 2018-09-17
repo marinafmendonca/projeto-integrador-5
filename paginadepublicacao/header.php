@@ -15,12 +15,14 @@
 </head>
 <body>
 <div id="topo">
-<a href="#"><img src= "img/logo.png" width="150" name="logo"></a>
+<a href="../usuario.php"><img src= "img/logo.png" width="150" name="logo"></a>
 <form method = "GET">
 <input type="text" placeholder= "Pesquisar amigos..." name="query" autocomplete="off"> <input type= "submit" hidden>
 </form>
+<a href="../logout.php"> <img src="img/sair.jpg" width="30" name="menu"></a>
 <a href="#"><img src="img/chat.png" width="30" name="menu"></a>
 <a href="#"><img src="img/perfil3.png" width="30" name="menu"></a>
-    
+
+
 </body>
 </html>

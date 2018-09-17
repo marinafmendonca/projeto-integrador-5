@@ -1,13 +1,1 @@
-{
-    "usuario" : [
-       {"id": 1, "nome": "adm","email":"leilaferreira@gmail.com", "senha":"1234"},
-       {"id": 2, "nome": "Marina","email": "marina@gmail.com","senha":"1234"},
-       {"id": 3, "nome": "Flavio","email": "flavio@gmail.com","senha":"1234"}
-       
-       ]
-     
-           
-   }
-   
-       
-       
+{"usuario":[{"nome":"adm","email":"leilaferreira@gmail.com","senha":"1234","caminhoFoto":""},{"nome":"Marina","email":"marina@gmail.com","senha":"1234","caminhoFoto":""},{"nome":"Flavio","email":"flavio@gmail.com","senha":"1234","caminhoFoto":""},{"nome":"bimo","email":"bimo@bimo.com","senha":"123","caminhoFoto":""},{"nome":"pipoco","email":"pipoco@gmail.com","senha":"123","caminhoFoto":""},{"nome":"LEILA G C FERREIRA","email":"leilaferreira.bhte@gmail.com","senha":"123","caminhoFoto":"image\/FotoLeila.jpg"},{"nome":"leila","email":"leila@mail.com","senha":"12345","caminhoFoto":"image\/eu.jpg"}]}

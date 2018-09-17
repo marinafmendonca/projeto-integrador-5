@@ -44,6 +44,7 @@
 
     <div class="transparencia"></div>
 
+    <form action="controleCadastro.php" method="post" enctype="multipart/form-data">    
         <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

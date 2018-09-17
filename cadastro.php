@@ -44,7 +44,7 @@
 
     <div class="transparencia"></div>
 
-    <form action="controleCadastro.php" method="post" enctype="multipart/form-data">    
+    <form action="controleCadastro.php" method="post" enctype="multipart/form-data">
         <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -57,14 +57,14 @@
                     </div>
                      <?php
                                     if(isset($_GET['error'])){
-                                     
+
                                         echo "<div class=\"alert alert-danger\" role=\"alert\">".$_GET['error']."</div>";
-                                  
+
                                     }
                                  ?>
                     <div class="modal-body">
                         <div class="form-group row">
-                                
+
 
                             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
                             <div class="col-sm-10">
@@ -83,7 +83,7 @@
                             <label for="senha" class="col-sm-2 col-form-label">Senha</label>
                             <div class="col-sm-10">
                                 <input required type="password" class="form-control" name="senha" id="senha">
-                                
+
                             </div>
                         </div>
                         <div class="form-group row">
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="campus" class="col-sm-2 col-form-label">Curso</label>
+                            <label for="campus" class="col-sm-2 col-form-label">Campus</label>
                             <div class="col-sm-10">
                               <select class="form-control" name="campus" id="campus">
                                 <option value="vilaOlimpia">Vila Olímpia, SP - Brasil</option>
@@ -128,10 +128,10 @@
                         <div class="modal-footer">
 
                         <input type="submit" class="btn btn-primary">
-                        
+
                         <a href="home.php"class="btn btn-primary">Voltar</a>
-                    
-                 
+
+
                         </div>
                     </div>
 

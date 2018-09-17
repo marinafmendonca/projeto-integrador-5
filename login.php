@@ -119,7 +119,7 @@ if($_POST){
               <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" name= "lembrarUsuario"id="lembrar-login">
                 <label class="form-check-label" for="lembrar-login">Lembrar usuário?</label>
-                <small class="form-text"><a href="#">Esqueceu a sua senha?</a></small>
+                <small class="form-text"><a href="recuperaSenha.php">Esqueceu a sua senha?</a></small>
               </div>
               <div class="modal-footer">
               <div class="container text-center ml-0">
@@ -128,7 +128,7 @@ if($_POST){
               </div>
               </div>
             </div>
-          </div> 
+          </div>
 
         </div>
         <footer class="page-footer font-small indigo">

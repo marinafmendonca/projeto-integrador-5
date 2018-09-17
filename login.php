@@ -3,14 +3,14 @@
 
 
 if($_POST){
- 
-  
+
+
     if(isset($_POST['email']) && isset($_POST['senha'])){
       $arqJson = "usuario.json";
       $conteudo = file_get_contents($arqJson);
       $jsonParaArray = json_decode($conteudo, true);
-    
-     
+
+
       foreach($jsonParaArray as $usuario){
         foreach($usuario as $dados){
               if($_POST['email'] === $dados['email'] && $_POST['senha']===$dados['senha']){
@@ -18,24 +18,33 @@ if($_POST){
                 $_SESSION['usuarioLogado'] = true;
                 $_SESSION['nomeUsuario'] = $dados["nome"];
                 $_SESSION['emailUsuario'] = $dados["email"];
+<<<<<<< HEAD
                 $_SESSION['FotoUsuario'] = $dados["caminhoFoto"];
+=======
+>>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
 
                 if(isset($_POST['lembrarUsuario'])) {
                   setcookie("email", $_POST ["email"]);
                 }else{
-                  
+
                   //http://www.php.net/manual/pt_BR/function.setcookie.php
-                  // parametros do setcookie usados aqui: 1 - nome do meu cookie, 
+                  // parametros do setcookie usados aqui: 1 - nome do meu cookie,
                   //2 valor (coloquei vazio), 3 - tempo (coloquei data anterior ao dia  atual)
-                  
+
                   setcookie('email', '', time()-3600);
                 }
-                 header('location:\projeto-integrador-5\paginadepublicacao\index.php');
+                // header('location:\projeto-integrador-5\paginadepublicacao\index.php');
+                header('location:\projeto-integrador-5\usuario.php');
               }
         }
       }
-      
+
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
 }
 ?>
 
@@ -98,7 +107,7 @@ if($_POST){
                 <span aria-hidden="true">&times;</span>
               </button> -->
               <?php
-                             
+
              ?>
             </div>
             <div class="modal-body">
@@ -121,9 +130,10 @@ if($_POST){
                 <small class="form-text"><a href="#">Esqueceu a sua senha?</a></small>
               </div>
               <div class="modal-footer">
-             
-              <input type="submit"  class="btn btn-primary" value ="Entrar" >
-                <a href="home.php" class="btn btn-primary">voltar</a>
+              <div class="container text-center ml-0">
+                <input type="submit"  class="btn btn-primary btn-lg" value ="Entrar">
+                <a href="home.php" class="btn btn-primary btn-lg">Voltar</a>
+              </div>
               </div>
             </div>
           </div>
@@ -231,8 +241,8 @@ if($_POST){
 
 
 
- 
-  
+
+
 </body>
 
 

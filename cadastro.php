@@ -1,5 +1,22 @@
+<<<<<<< HEAD
 
 
+=======
+<?php
+//gravar imagem enviada
+if (isset($_FILES['fotoPerfil'])) {
+  $foto = $_FILES['fotoPerfil'];
+  $fotoName = $foto['name'];
+  if ($foto['error'] === UPLOAD_ERR_OK) {
+    $path = "image/".$fotoName;
+      $ok = move_uploaded_file($foto['tmp_name'], $path);
+      if ($ok) {
+        //salvar no json!
+      }
+  }
+}
+?>
+>>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +62,11 @@
 
     <div class="transparencia"></div>
 
+<<<<<<< HEAD
     <form action="controleCadastro.php" method="post" enctype="multipart/form-data">
+=======
+    <form action="cadastro.php" method="post" enctype="multipart/form-data">
+>>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
       <?php
       // if ($_POST){
       //   if($_POST['senha'] != $_POST['confirma-senha']){
@@ -98,6 +119,27 @@
                             <label for="confirmaSenha" class="col-sm-2 col-form-label">Confirmar Senha</label>
                             <div class="col-sm-10">
                                 <input required type="password" class="form-control" name="confirmaSenha"  id="confirmaSenha">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="curso" class="col-sm-2 col-form-label">Curso</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" name="curso" id="curso">
+                                <option value="fullstack">Desenvolvimento Web Full Stack</option>
+                                <option value="mobile">Desenvolvimento Mobile</option>
+                                <option value="marketing">Marketing Digital</option>
+                                <option value="datascience">Data Science</option>
+                                <option value="gestao">Gestão de Negócios Digitais</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="campus" class="col-sm-2 col-form-label">Curso</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" name="campus" id="campus">
+                                <option value="vilaOlimpia">Vila Olímpia, SP - Brasil</option>
+                                <option value="argentina">Buenos Aires - Argentina</option>
+                              </select>
                             </div>
                         </div>
                         <div class="form-group row">

@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
     session_start();
     
   
@@ -7,20 +7,7 @@
         header('location:\projeto-integrador-5\home.php');
         exit;
     }
-
-    ?>
-
-
-=======
-session_start();
-if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
-  if($_POST['senha'] != $_POST['confirmaSenha']){
-    header("Location:cadastro.php?error=true");
-  }
-}
- ?>
->>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
-
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -39,7 +26,7 @@ if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
       <div class="row">
         <div class="col-lg-3 col-xl-3 text-center" style="border-right:2px solid rgb(200,200,200)">
           <?php
-<<<<<<< HEAD
+
               if (isset($_SESSION['FotoUsuario'])) {
                 echo "<img class='fotoPerfil img-fluid mb-2' src='".$_SESSION['FotoUsuario']."' alt='foto de perfil'>";
               }else{
@@ -50,15 +37,7 @@ if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
             if (isset($_SESSION['nomeUsuario'])) {
               $nome= $_SESSION['nomeUsuario'];
               echo "<h2> $nome </h2>";
-=======
-          //imprime imagem com nome no json ou session
-          //echo "<img class='fotoPerfil img-fluid mb-2' src='image/$fotoName' alt='foto de perfil'>";
-            if (isset($_SESSION['nomeUsuario'])) {
-              $nome=$_SESSION['nomeUsuario'];
-              echo "<h3>$nome</h3>";
->>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
-            }
-            else echo "<h3>Nome Sobrenome</h3>";
+            }else{ echo "<h3>Nome - Sobrenome</h3>"; };
            ?>
           <h4>Curso</h4>
           <h4>Campus</h4>
@@ -70,4 +49,4 @@ if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
   </div>
   <?php require_once 'footer.php' ?>
   </body>
-</html>
+</html>   

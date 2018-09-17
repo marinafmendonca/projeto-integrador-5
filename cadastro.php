@@ -1,22 +1,4 @@
-<<<<<<< HEAD
 
-
-=======
-<?php
-//gravar imagem enviada
-if (isset($_FILES['fotoPerfil'])) {
-  $foto = $_FILES['fotoPerfil'];
-  $fotoName = $foto['name'];
-  if ($foto['error'] === UPLOAD_ERR_OK) {
-    $path = "image/".$fotoName;
-      $ok = move_uploaded_file($foto['tmp_name'], $path);
-      if ($ok) {
-        //salvar no json!
-      }
-  }
-}
-?>
->>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
 <!DOCTYPE html>
 <html>
 
@@ -62,18 +44,6 @@ if (isset($_FILES['fotoPerfil'])) {
 
     <div class="transparencia"></div>
 
-<<<<<<< HEAD
-    <form action="controleCadastro.php" method="post" enctype="multipart/form-data">
-=======
-    <form action="cadastro.php" method="post" enctype="multipart/form-data">
->>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
-      <?php
-      // if ($_POST){
-      //   if($_POST['senha'] != $_POST['confirma-senha']){
-      //     echo "<p> Senha não é compativel </p>";
-      // }
-      // }
-       ?>
         <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

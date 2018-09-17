@@ -18,10 +18,7 @@ if($_POST){
                 $_SESSION['usuarioLogado'] = true;
                 $_SESSION['nomeUsuario'] = $dados["nome"];
                 $_SESSION['emailUsuario'] = $dados["email"];
-<<<<<<< HEAD
                 $_SESSION['FotoUsuario'] = $dados["caminhoFoto"];
-=======
->>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
 
                 if(isset($_POST['lembrarUsuario'])) {
                   setcookie("email", $_POST ["email"]);
@@ -40,11 +37,6 @@ if($_POST){
       }
 
     }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 51a1f75dbfab9919f131dde9b0e6bab9d741d06c
 }
 ?>
 
@@ -136,7 +128,7 @@ if($_POST){
               </div>
               </div>
             </div>
-          </div>
+          </div> 
 
         </div>
         <footer class="page-footer font-small indigo">

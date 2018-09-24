@@ -13,7 +13,7 @@ if($_POST){
 
       foreach($jsonParaArray as $usuario){
         foreach($usuario as $dados){
-              if($_POST['email'] === $dados['email'] && $_POST['senha']===$dados['senha']){
+              if($_POST['email'] === $dados['email'] && password_verify($_POST['senha'],$dados['senha'])){
                session_start();
                 $_SESSION['usuarioLogado'] = true;
                 $_SESSION['nomeUsuario'] = $dados["nome"];

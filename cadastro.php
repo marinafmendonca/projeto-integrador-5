@@ -126,12 +126,17 @@
                     </div>
 
                         <div class="modal-footer">
-
+                        <div class="row ">
+                         <div class="w-100">
+                         <div class="col  order-last">
                         <input type="submit" class="btn btn-primary">
                         
                         <a href="home.php"class="btn btn-primary">Voltar</a>
                     
                  
+                        </div>
+                        </div>
+                        </div>
                         </div>
                     </div>
 

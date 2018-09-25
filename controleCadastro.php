@@ -14,7 +14,7 @@ $erroMensValidacao ="";
 // verificando email, login e senha para inserir no cadastro 
  
 if(empty($nome_usuario)){
-  $erroMensValidacao = "Nome do Usuairo não pode ser em braco. </br>";
+  $erroMensValidacao = "Nome do Usuario não pode ser em braco. </br>";
   
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  

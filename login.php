@@ -9,8 +9,7 @@ if($_POST){
       $arqJson = "usuario.json";
       $conteudo = file_get_contents($arqJson);
       $jsonParaArray = json_decode($conteudo, true);
-
-
+      
       foreach($jsonParaArray as $usuario){
         foreach($usuario as $dados){
               if($_POST['email'] === $dados['email'] && $_POST['senha']===$dados['senha']){
@@ -33,6 +32,7 @@ if($_POST){
                 // header('location:\projeto-integrador-5\paginadepublicacao\index.php');
                 header('location:\projeto-integrador-5\usuario.php');
               }
+              
         }
       }
 
@@ -122,15 +122,19 @@ if($_POST){
                 <small class="form-text"><a href="#">Esqueceu a sua senha?</a></small>
               </div>
               <div class="modal-footer">
-              <div class="container text-center ml-0">
+              <div class="row ">
+              <div class="w-100">
+              <div class="col  order-last">
                 <input type="submit"  class="btn btn-primary btn-lg" value ="Entrar">
                 <a href="home.php" class="btn btn-primary btn-lg">Voltar</a>
               </div>
               </div>
             </div>
           </div> 
-
+          </div>
         </div>
+        </div>
+        
         <footer class="page-footer font-small indigo">
 
 <!-- Footer Links -->

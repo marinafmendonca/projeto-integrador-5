@@ -131,6 +131,31 @@ LOCK TABLES `tb_detalhesusuario` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tb_fotos`
+--
+
+DROP TABLE IF EXISTS `tb_fotos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_fotos` (
+  `id_fotos` int(11) NOT NULL AUTO_INCREMENT,
+  `fotos` blob,
+  `foto_perfil` tinyint(1) DEFAULT NULL,
+  `usuario_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id_fotos`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_fotos`
+--
+
+LOCK TABLES `tb_fotos` WRITE;
+/*!40000 ALTER TABLE `tb_fotos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_fotos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tb_grupos`
 --
 
@@ -228,11 +253,12 @@ CREATE TABLE `tb_usuario` (
   `usuario_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `senha` varchar(45) NOT NULL,
-  `data_hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `senha` text NOT NULL,
+  `data_hora` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`usuario_id`),
   UNIQUE KEY `id_usuario_UNIQUE` (`usuario_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,6 +267,7 @@ CREATE TABLE `tb_usuario` (
 
 LOCK TABLES `tb_usuario` WRITE;
 /*!40000 ALTER TABLE `tb_usuario` DISABLE KEYS */;
+INSERT INTO `tb_usuario` VALUES (30,'lele','leilaferreira.bhte@gmail.com','$2y$10$EtF/UxJoPLvRHXJ/qdwYyu8OlDUUOFV7Sw4vt17eOfu5rUlnVCFte','2018-10-17 02:41:27',1),(31,'Leila','leila@mail.com','$2y$10$CvpChsPV/1xgO3N1hS6VeO7b6W.hsAGgHhpfJPVeAHDufEaVvMRJC','2018-10-17 02:42:01',1);
 /*!40000 ALTER TABLE `tb_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -253,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-02 18:47:00
+-- Dump completed on 2018-10-17  0:28:47

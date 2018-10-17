@@ -4,17 +4,17 @@
     logado para a area de usuario.
 
 */
-$nome_usuario= @$_POST ['nome'];
+/* $nome_usuario= @$_POST ['nome'];
 $email = @$_POST['email'];
 $senhaOriginal = @$_POST['senha'];
 $senha = password_hash($senhaOriginal,PASSWORD_DEFAULT);
 $confirmarSenha = @$_POST['ConfirmarSenha'];
 $foto = @$_FILES['fotoPerfil'];
 $erroMensValidacao ="";
-
+ */
 // verificando email, login e senha para inserir no cadastro
 
-if(empty($nome_usuario)){
+/* if(empty($nome_usuario)){
   $erroMensValidacao = "Nome do Usuairo não pode ser em braco. </br>";
 
 }
@@ -32,19 +32,19 @@ if(isset($_POST['senha'])&& isset($_POST['confirmaSenha'])){
 if(!empty($erroMensValidacao)){
  header("Location:cadastro.php?error=".$erroMensValidacao);
 
-}else{
+}else{ */
 
   //Dados da imagem para ser salva.
 
-  $caminhoFoto = "image/".  $foto['name'];
+ /*  $caminhoFoto = "image/".  $foto['name'];
   gravarUsuario ($nome_usuario,$email,$senha,$caminhoFoto, $foto['tmp_name']);
 }
-
+ */
 
  /* Função para gravar dados do usuario no arquivo json.
  Ela recebe os dados vindo da pagina de cadastro. */
 
-function gravarUsuario ($nome_usuario,$email,$senha,$caminhoFoto,$fotoNoneTemp){
+/* function gravarUsuario ($nome_usuario,$email,$senha,$caminhoFoto,$fotoNoneTemp){
 
   $arquivo = 'usuario.json';
 
@@ -73,6 +73,6 @@ function gravarUsuario ($nome_usuario,$email,$senha,$caminhoFoto,$fotoNoneTemp){
 }
 
 
-
+ */
 
 ?>

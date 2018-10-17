@@ -44,7 +44,7 @@
 
     <div class="transparencia"></div>
 
-    <form action="controleCadastro.php" method="post" enctype="multipart/form-data">
+    <form action= "view/cadastroview.php" method="post" enctype="multipart/form-data">
         <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -82,17 +82,17 @@
                         <div class="form-group row">
                             <label for="senha" class="col-sm-2 col-form-label">Senha</label>
                             <div class="col-sm-10">
-                                <input required type="password" class="form-control" name="senha" id="senha">
+                                <input required type="password" class="form-control" name="senha" id="senha" placeholder="*******">
 
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class=  "form-group row">
                             <label for="confirmaSenha" class="col-sm-2 col-form-label">Confirmar Senha</label>
                             <div class="col-sm-10">
-                                <input required type="password" class="form-control" name="confirmaSenha"  id="confirmaSenha">
+                                <input required type="password" class="form-control" name="confirmarSenha"  id="confirmarSenha" placeholder="*******">
                             </div>
                         </div>
-                        <div class="form-group row">
+                       <div class="form-group row">
                             <label for="curso" class="col-sm-2 col-form-label">Curso</label>
                             <div class="col-sm-10">
                               <select class="form-control" name="curso" id="curso">
@@ -102,7 +102,7 @@
                                 <option value="datascience">Data Science</option>
                                 <option value="gestao">Gestão de Negócios Digitais</option>
                               </select>
-                            </div>
+                            </div> 
                         </div>
                         <div class="form-group row">
                             <label for="campus" class="col-sm-2 col-form-label">Campus</label>
@@ -112,7 +112,7 @@
                                 <option value="argentina">Buenos Aires - Argentina</option>
                               </select>
                             </div>
-                        </div>
+                        </div> 
                         <div class="form-group row">
                             <label for="upload-foto" class="col-sm-2 col-form-label">Foto Login</label>
                             <div class="col-sm-10">

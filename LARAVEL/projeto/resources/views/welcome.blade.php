@@ -1,98 +1,119 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
+@section('content')
+<div class="container mt-5 p-2">
+  <div class="text-center my-4">
+    <img id="logo" class="img-fluid" src="image/logo.png" alt="logo">
+  </div>
+  <h2 class="text-center">Bem-vindo à talkHouse</h2>
+  <h3 class="text-center">A talkHouse é a rede social de alunos e professores da Digital House</h3>
+  <div class="text-center my-5">
+    <a href="login.php" class="btn btn-lg"  >Logar</a>
+    <a href="cadastro.php" class="btn btn-lg" >Cadastrar</a>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+  </div>
+</div>
+<div class="login">
+  <h3>Login</h3>
+  <div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+    <div class="col-sm-12">
+      <input type="email" class="form-control" name= "email" id="email" value="<?php echo @$_COOKIE["email"];?>"  placeholder="usuario@email.com.br">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="senha" class="col-sm-2 col-form-label">Senha</label>
+    <div class="col-sm-12">
+      <input type="password" class="form-control" name= "senha" id="senha" placeholder="">
+    </div>
+  </div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" name= "lembrarUsuario"id="lembrar-login">
+    <label class="form-check-label" for="lembrar-login">Lembrar usuário?</label>
+    <small class="form-text"><a href="recuperaSenha.php">Esqueceu a sua senha?</a></small>
+  </div>
+  <div class="modal-footer">
+    <div class="row ">
+      <div class="w-100">
+        <div class="col  order-last">
+          <button type="submit" class="btn btn-primary btn-lg" name="button">Entrar</button>
+          <a href="home.php" class="btn btn-primary btn-lg">Voltar</a>
         </div>
-    </body>
-</html>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="cadastro">
+  <h3>Cadastro</h3>
+  <div class="form-group row">
+    <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+    <div class="col-sm-10">
+        <input required placeholder="Nome" type="text" class="form-control" id="nome" name="nome"  value='<?php echo
+         isset($_POST['nome'])?$_POST['nome']:''; ?>' required>
+    </div>
+</div>
+<div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+    <div class="col-sm-10">
+        <input required type="email" class="form-control" id="email" name="email" placeholder="usuario@email.com.br"  value='<?php echo
+         isset($_POST['email'])?$_POST['email']:''; ?>'>
+    </div>
+</div>
+<div class="form-group row">
+    <label for="senha" class="col-sm-2 col-form-label">Senha</label>
+    <div class="col-sm-10">
+        <input required type="password" class="form-control" name="senha" id="senha" placeholder="*******">
+
+    </div>
+</div>
+<div class=  "form-group row">
+    <label for="confirmaSenha" class="col-sm-2 col-form-label">Confirmar Senha</label>
+    <div class="col-sm-10">
+        <input required type="password" class="form-control" name="confirmarSenha"  id="confirmarSenha" placeholder="*******">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="curso" class="col-sm-2 col-form-label">Curso</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="curso" id="curso">
+        <option value="fullstack">Desenvolvimento Web Full Stack</option>
+        <option value="mobile">Desenvolvimento Mobile</option>
+        <option value="marketing">Marketing Digital</option>
+        <option value="datascience">Data Science</option>
+        <option value="gestao">Gestão de Negócios Digitais</option>
+      </select>
+    </div>
+</div>
+<div class="form-group row">
+    <label for="campus" class="col-sm-2 col-form-label">Campus</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="campus" id="campus">
+        <option value="vilaOlimpia">Vila Olímpia, SP - Brasil</option>
+        <option value="argentina">Buenos Aires - Argentina</option>
+      </select>
+    </div>
+</div>
+<div class="form-group row">
+    <label for="upload-foto" class="col-sm-2 col-form-label">Foto Login</label>
+    <div class="col-sm-10">
+        <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
+    </div>
+</div>
+
+<small>Ao inscrever-se, você concorda com os Termos de Serviço e com as Políticas de Privacidade,
+    incluindo o Uso de Cookies. Outras pessoas poderão encontrar você pelo e-mail ou número de telefone
+    fornecido.</small>
+    <div class="modal-footer">
+      <div class="row ">
+        <div class="w-100">
+          <div class="col  order-last">
+            <button type="submit" class="btn btn-primary btn-lg" name="button">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+@endsection

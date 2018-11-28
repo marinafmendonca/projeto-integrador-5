@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/signup', 'UsuarioController@signUp');
+Route::post('/login', 'UsuarioController@login');
+Route::get('/feed', 'UsuarioController@feed');

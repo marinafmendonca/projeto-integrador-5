@@ -14,7 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+// AUTH
 Route::post('/signup', 'UsuarioController@signUp');
 Route::post('/login', 'UsuarioController@login');
-Route::get('/feed', 'UsuarioController@feed');
+
+// POST
+Route::get('/feed', 'PostController@feed');
+Route::post('/createpost', 'PostController@createPost');
+Route::get('/deletepost/{post_id}', 'PostController@deletePost');

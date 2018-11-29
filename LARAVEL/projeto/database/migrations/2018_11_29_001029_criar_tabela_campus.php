@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration
+class CriarTabelaCampus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->increments('post_id');
-            $table->timestamps();
-            $table->integer('usuario_id');
-            $table->binary('post');
-            $table->timestamp('data_hora');
+        Schema::create('TB_Campus', function (Blueprint $table) {
+            $table->increments('campus_id');
+            $table->string('nome');
+            $table->string('endereco');
+            $table->timestamps('data_hora');
         });
     }
 
@@ -29,6 +28,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('TB_Campus');
     }
 }

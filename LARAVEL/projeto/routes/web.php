@@ -22,3 +22,7 @@ Route::post('/login', 'UsuarioController@login');
 Route::get('/feed', 'PostController@feed');
 Route::post('/createpost', 'PostController@createPost');
 Route::get('/deletepost/{post_id}', 'PostController@deletePost');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

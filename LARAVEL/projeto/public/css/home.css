@@ -1,0 +1,27 @@
+.btn{
+  background-color: #ab0127;
+  border-color: #ab0127;
+  color: #fff;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  .lblBtnFile{
+    background-color: #ab0127;
+   
+  }
+  
+  .button:hover {
+     background-color: #e7e7e7;
+     text-decoration: none;
+     outline:none;
+    }
+  .button {
+      background-color: #ab0127;
+      border-color: #ab0127;
+      color: #fff;
+      margin-bottom: 0 !important;
+        
+     }
+    

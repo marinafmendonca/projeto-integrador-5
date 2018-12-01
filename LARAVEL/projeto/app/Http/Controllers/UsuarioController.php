@@ -20,17 +20,13 @@ class UsuarioController extends Controller
     $email = $request['email'];
     $senha = bcrypt($request['senha']);
     $confirmaSenha = bcrypt($request['confirmaSenha']);
-    $curso = $request['curso'];
-    $campus = $request['campus'];
-
+    
 
     $usuario = new Usuario();
     $usuario->nome = $nome;
     $usuario->email = $email;
     $usuario->senha = $senha;
-    $usuario->confirmaSenha = $confirmaSenha;
-    $usuario->curso = $curso;
-    $usuario->campus = $campus;
+    
 
     $usuario->save();
 

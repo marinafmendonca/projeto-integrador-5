@@ -1,120 +1,173 @@
-@extends('layouts.master')
+<!DOCTYPE html>
+<html lang="pt-br">
 
-@section('content')
-<div class="container mt-5 p-2">
-  <div class="text-center my-4">
-    <img id="logo" class="img-fluid" src="image/logo.png" alt="logo">
-  </div>
-  <h2 class="text-center">Bem-vindo à talkHouse</h2>
-  <h3 class="text-center">A talkHouse é a rede social de alunos e professores da Digital House</h3>
-</div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>talkHouse</title>
 
-<form action="/login" method="post" enctype="multipart/form-data">
-  @csrf
-  <div class="login">
-    <h3>Login</h3>
-    <div class="form-group row">
-      <label for="email" class="col-sm-2 col-form-label">E-mail</label>
-      <div class="col-sm-12">
-        <input type="email" class="form-control" name= "email" id="email" value="<?php echo @$_COOKIE["email"];?>"  placeholder="usuario@email.com.br">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="senha" class="col-sm-2 col-form-label">Senha</label>
-      <div class="col-sm-12">
-        <input type="password" class="form-control" name= "senha" id="senha" placeholder="">
-      </div>
-    </div>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/home.css">
+    <style>
+        main{
+              min-height: 100vh;
+              overflow: hidden;
+              padding: 100px 0 0 0;
+          }
+          main video{
+              top: 0;
+              left: 0;
+          }
+          .jumbotron{
+              background-color:rgba(0,0,0,0.2);
+              color: #fff;
+          }
+          
+      </style>
+</head>
 
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" name= "lembrarUsuario"id="lembrar-login">
-      <label class="form-check-label" for="lembrar-login">Lembrar usuário?</label>
-      <small class="form-text"><a href="recuperaSenha.php">Esqueceu a sua senha?</a></small>
-    </div>
-    <div class="modal-footer">
-      <div class="row ">
-        <div class="w-100">
-          <div class="col  order-last">
-            <button type="submit" class="btn btn-primary btn-lg" name="button">Entrar</button>
-            <a href="home.php" class="btn btn-primary btn-lg">Voltar</a>
-          </div>
+<body>
+    <header class="fixed-top">
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+            <img src="/imagem/logo.png" class="my-0 mr-md-auto font-weight-normal" height="30" name="logo">
+            <form class="my-2 my-md-0 mr-md-3" method="POST" action="{{ route('login') }}">
+            @csrf
+                <div class="input-group">
+                    <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="email" aria-label="email">
+                    @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                    <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="senha" aria-label="senha">
+                    @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                    <div class="input-group-append">
+                        <button class="btn button" type="submit" id="button-addon2">Login</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-    </div>
-  </div>
-</form>
+    </header>
+    <main class="position-relative">
+        <video class="position-absolute" autoplay="true" muted="true" loop="true" class="video">
+            <source src="/imagem/files.mp4" type="video/mp4">
+        </video>
 
-<form action="/signup" method="post" enctype="multipart/form-data">
-  @csrf
-  <div class="cadastro">
-    <h3>Cadastro</h3>
-    <div class="form-group row">
-      <label for="nome" class="col-sm-2 col-form-label">Nome</label>
-      <div class="col-sm-10">
-          <input required placeholder="Nome" type="text" class="form-control" id="nome" name="nome"  value='<?php echo
-           isset($_POST['nome'])?$_POST['nome']:''; ?>' required>
-      </div>
-  </div>
-  <div class="form-group row">
-      <label for="email" class="col-sm-2 col-form-label">E-mail</label>
-      <div class="col-sm-10">
-          <input required type="email" class="form-control" id="email" name="email" placeholder="usuario@email.com.br"  value='<?php echo
-           isset($_POST['email'])?$_POST['email']:''; ?>'>
-      </div>
-  </div>
-  <div class="form-group row">
-      <label for="senha" class="col-sm-2 col-form-label">Senha</label>
-      <div class="col-sm-10">
-          <input required type="password" class="form-control" name="senha" id="senha" placeholder="*******">
+        <div class="container">
+            <div class="row">
+                <div class="position-relative jumbotron col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-7">
+                                <h1>
+                                    Bem-vindo(a) a </><span style="color:#ab0127;">talk</span>House
+                                </h1>
 
-      </div>
-  </div>
-  <div class=  "form-group row">
-      <label for="confirmaSenha" class="col-sm-2 col-form-label">Confirmar Senha</label>
-      <div class="col-sm-10">
-          <input required type="password" class="form-control" name="confirmarSenha"  id="confirmarSenha" placeholder="*******">
-      </div>
-  </div>
-  <div class="form-group row">
-      <label for="curso" class="col-sm-2 col-form-label">Curso</label>
-      <div class="col-sm-10">
-        <select class="form-control" name="curso" id="curso">
-          <option value="fullstack">Desenvolvimento Web Full Stack</option>
-          <option value="mobile">Desenvolvimento Mobile</option>
-          <option value="marketing">Marketing Digital</option>
-          <option value="datascience">Data Science</option>
-          <option value="gestao">Gestão de Negócios Digitais</option>
-        </select>
-      </div>
-  </div>
-  <div class="form-group row">
-      <label for="campus" class="col-sm-2 col-form-label">Campus</label>
-      <div class="col-sm-10">
-        <select class="form-control" name="campus" id="campus">
-          <option value="vilaOlimpia">Vila Olímpia, SP - Brasil</option>
-          <option value="argentina">Buenos Aires - Argentina</option>
-        </select>
-      </div>
-  </div>
-  <div class="form-group row">
-      <label for="upload-foto" class="col-sm-2 col-form-label">Foto Login</label>
-      <div class="col-sm-10">
-          <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
-      </div>
-  </div>
 
-  <small>Ao inscrever-se, você concorda com os Termos de Serviço e com as Políticas de Privacidade,
-      incluindo o Uso de Cookies. Outras pessoas poderão encontrar você pelo e-mail ou número de telefone
-      fornecido.</small>
-      <div class="modal-footer">
-        <div class="row ">
-          <div class="w-100">
-            <div class="col  order-last">
-              <button type="submit" class="btn btn-primary btn-lg" name="button">Entrar</button>
+                                <div class="wc-feat-float">
+                                    <i class="icon-group" style="font-size: 50px;"></i>
+                                    <div class="feat-msg">
+                                        <strong>O canal para você conectar e compartilhar com as professores e alunos da
+                                            Digital
+                                            House.</strong>
+                                        <p>
+                                            Nunca fique de fora! Mantenha contato com colegas, professores e amigos o tempo
+                                            todo!
+                                        </p>
+                                    </div>
+                                    <div class="float-clear"></div>
+                                </div>
+
+                                <div class="wc-feat-float">
+                                    <i class="icon-tablet" style="font-size: 80px;"></i>
+                                    <div class="feat-msg">
+                                        <strong>De saída? Ganhe mobilidade!</strong>
+                                        <p>
+                                            Um site para todos os dispositivos. Se você usa desktop, tablet ou smartphone,<br>
+                                            mantenha contato com seus amigos!
+                                        </p>
+                                    </div>
+                                    <div class="float-clear"></div>
+                                </div>
+
+                                <div class="wc-feat-float">
+                                    <i class="icon-globe" style="font-size: 70px;"></i>
+                                    <div class="feat-msg">
+                                        <strong>Saiba o que está acontecendo na Digital House!</strong>
+                                        <p>
+                                            Fique à frente do mundo. Fique de olho na evolução ao seu redor!
+                                        </p>
+                                    </div>
+                                    <div class="float-clear"></div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                    <form class="formulario_bemvindo" action="/signup" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <label>
+                                            <h3>Criar uma nova conta</h3>
+                                        </label>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputNomel4">Nome</label>
+                                                <input type="text" name="nome" class="form-control" id="inputNome" placeholder="" required>
+                                            </div>
+                                            @if ($errors->has('nome'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('nome') }}</strong>
+                                                </span>
+                                            @endif
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">E-mail</label>
+                                                <input type="email" name="email" class="form-control" id="inputEmail14" placeholder="email@email.com" required>
+                                            </div>
+                                            @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                        
+                        
+                                        <div class="form-row ">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputSenha">Senha</label>
+                                                <input type="password" name="password" class="form-control" id="password" placeholder="*******" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputSenha2">Confirmar Senha</label>
+                                                <input type="password" name="confirmarPassword" class="form-control" id="confirmarPassword"
+                                                    placeholder="*******" required>
+                                            </div>
+                                            @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                
+                                                        
+                                            <div class="form-group">
+                                                <label for="upload-foto" class="btn button  ">Upload Foto </label>
+                                                <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
+                                                <button type="submit" class="btn button">Cadastrar</button>
+                                            </div>
+                                           
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-  </div>
-</form>
-@endsection
+    </main>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

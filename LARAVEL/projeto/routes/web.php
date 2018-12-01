@@ -14,15 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+
 // AUTH
 Route::post('/signup', 'UsuarioController@signUp');
 Route::post('/login', 'UsuarioController@login');
 
 // POST
-Route::get('/feed', 'PostController@feed');
-Route::post('/createpost', 'PostController@createPost');
-Route::get('/deletepost/{post_id}', 'PostController@deletePost');
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/feed', 'PostController@feed')->middleware('auth');
+Route::post('/createpost', 'PostController@createPost')->middleware ( 'auth' );
+Route::get('/deletepost/{post_id}', 'PostController@deletePost')->middleware ( 'auth' );
+
+//PERFIL
+Route::get('/perfil/{id?}', 'UsuarioController@perfil');
+Route::post('/salvarmudancas', 'UsuarioController@salvarMudancas');

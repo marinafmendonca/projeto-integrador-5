@@ -22,7 +22,7 @@
                 <article class="post" data-postid="{{ $post->id }}">
                     <p>{{ $post->post }}</p>
                     <div class="info">
-                        Posted by
+                        Postado por 
                     </div>
                     <div class="interaction">
 

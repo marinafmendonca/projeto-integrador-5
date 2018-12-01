@@ -17,7 +17,7 @@ class CriarTabelaCampus extends Migration
             $table->increments('campus_id');
             $table->string('nome');
             $table->string('endereco');
-            $table->timestamps('data_hora');
+            $table->timestamps();
         });
     }
 

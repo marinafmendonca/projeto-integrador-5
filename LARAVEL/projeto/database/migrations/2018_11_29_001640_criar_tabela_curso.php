@@ -19,7 +19,7 @@ class CriarTabelaCurso extends Migration
             $table->string('turno');
             $table->string('turma');
             $table->integer('detalhe_id');
-            $table->timestamps('data_hora');
+            $table->timestamps();
         });
     }
 

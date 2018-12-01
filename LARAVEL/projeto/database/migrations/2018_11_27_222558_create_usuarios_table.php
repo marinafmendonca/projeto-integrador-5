@@ -21,7 +21,7 @@ class CreateUsuariosTable extends Migration
           $table->string('senha');
           $table->string('confirmaSenha');
           $table->rememberToken();
-          $table->timestamps('data_hora');
+          $table->timestamps();
         });
     }
 

@@ -16,7 +16,7 @@ class CriarTabelaDetalheUsuario extends Migration
         Schema::create('TB_DetalheUsuario', function (Blueprint $table) {
             $table->increments('detalhe_id');
             $table->integer('usuario_id');
-            $tabel->integer('ampus_id');
+            $table->integer('campus_id');
             $table->string('formacao');
             $table->string('trabalho');
             $table->integer('idade');

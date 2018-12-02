@@ -18,6 +18,7 @@ class CriarTabelaDetalheUsuario extends Migration
             $table->integer('usuario_id');
             $table->integer('campus_id');
             $table->string('formacao');
+            $table->string('sexo');
             $table->string('trabalho');
             $table->integer('idade');
             $table->binary('sobre');

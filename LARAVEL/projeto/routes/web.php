@@ -19,6 +19,7 @@ Auth::routes();
 // AUTH
 Route::post('/signup', 'UsuarioController@signUp');
 Route::post('/login', 'UsuarioController@login');
+Route::get('/logout', 'UsuarioController@logout');
 
 // POST
 Route::get('/home', 'HomeController@index')->name('home');

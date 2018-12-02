@@ -1,6 +1,11 @@
 
 <body>
   <header>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/estilos.css" rel="stylesheet">
+
+  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="paginadepublicacao/index.php"><span class="log">talkHouse</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +33,7 @@
           </li>
 
             <li class="nav-item">
-            <a class="nav-link" href="logout.php">Sair</a>
+            <a class="nav-link" href="{{route('logout')}}">Sair</a>
           </li>
 
           <!-- <li class="nav-item">
@@ -42,4 +47,8 @@
       </div>
     </nav>
   </header>
+
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>

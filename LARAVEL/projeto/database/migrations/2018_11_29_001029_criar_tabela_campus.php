@@ -17,6 +17,9 @@ class CriarTabelaCampus extends Migration
             $table->increments('campus_id');
             $table->string('nome');
             $table->string('endereco');
+            $table->string('cidade');
+            $table->string('estado');
+            $table->string('pais');
             $table->timestamps();
         });
     }

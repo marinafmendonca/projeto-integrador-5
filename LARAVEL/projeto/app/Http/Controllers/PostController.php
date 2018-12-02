@@ -24,9 +24,9 @@ class PostController extends Controller
         $post->post = $request['post'];
         $mensagem = '!!!';
 
-        // if ($request->usuario()->posts()->save($post)) {
-        //     $mensagem = 'Post successfully created!';
-        // }
+         if ($request->usuario()->posts()->save($post)) {
+             $mensagem = 'Post successfully created!';
+         }
         return view('feed')->with(['mensagem' => $mensagem]);
     }
 

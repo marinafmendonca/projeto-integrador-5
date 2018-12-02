@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('post_id');
             $table->integer('usuario_id');
             $table->binary('post');
+            $table->string('pathimagem',255);
             $table->timestamps();
         });
     }

@@ -19,8 +19,8 @@
     
 
     <nav class="navbar navbar-expand-lg navbar navbar-light"style="background-color: #e3f2fd; height: 40px ; padding-bottom:2%" >
-      <a class="navbar-brand" href="paginadepublicacao/index.php" >
-      <img src="/imagem/logo.png" class="my-0 mr-md-auto font-weight-normal" height="20" name="logo">
+      <a class="navbar-brand" href="/feed" >
+      <img src="/imagem/logo.png" href="/feed" class="my-0 mr-md-auto font-weight-normal" height="20" name="logo">
     </a>
      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,7 +28,7 @@
       
             <ul class="navbar-nav mr-auto" >
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Linha do Tempo <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/feed">Linha do Tempo <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Amigos</a>
@@ -43,10 +43,11 @@
                     Meu Perfil
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Perfil</a>
+                    <a class="dropdown-item" href="/profile">Perfil</a>
                     <a class="dropdown-item" href="#">Pagina Inicial</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Configurações</a>
+                    <a class="dropdown-item" href="/faq">Faq</a>
                   </div>
                 </li>
 
@@ -66,11 +67,9 @@
              
     </nav>
 
-
- 
-
   <script src="js/jquery-3.3.1.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
 </body>
+</html>

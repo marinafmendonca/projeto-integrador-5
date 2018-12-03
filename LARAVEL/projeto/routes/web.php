@@ -30,3 +30,10 @@ Route::get('/deletepost/{post_id}', 'PostController@deletePost')->middleware ( '
 //PERFIL
 Route::get('/perfil/{id?}', 'UsuarioController@perfil');
 Route::post('/salvarmudancas', 'UsuarioController@salvarMudancas');
+
+//PROFILE
+Route::get('/profile', 'UsuarioController@profile');
+
+//FAQ
+Route::get('/faq', 'UsuarioController@faq');
+

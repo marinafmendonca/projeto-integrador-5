@@ -46,11 +46,20 @@ class UsuarioController extends Controller
       // return redirect()->route('feed');
       $id = Auth::id();
       session(['usuario_id'=> $id]);
-      return view('feed');
+      return redirect('/profile');
     }
     else {
       return redirect()->back();
     }
+  }
+  public function profile()
+  {
+       return view('profile');
+  }
+
+  public function faq()
+  {
+       return view('faq');
   }
 
   public function logout()

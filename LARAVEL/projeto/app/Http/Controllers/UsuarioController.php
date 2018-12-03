@@ -20,23 +20,23 @@ class UsuarioController extends Controller
     $email = $request['email'];
     $password = bcrypt($request['password']);
     $confirmaSenha = bcrypt($request['confirmaPassword']);
-    
+
 
     $usuario = new Usuario();
     $usuario->nome = $nome;
     $usuario->email = $email;
     $usuario->password = $password;
-    
+
 
     $usuario->save();
 
     Auth::login($usuario);
 
-    return redirect('/feed');
+    return redirect('/feed')->action('PostController@feed');;
   }
   public function login(Request $request)
   {
-      	
+
 	  $credentials = [
       'email' => $request['email'],
       'password' =>  $request['password']
@@ -44,6 +44,8 @@ class UsuarioController extends Controller
 
     if(Auth::attempt($credentials)){
       // return redirect()->route('feed');
+      $id = Auth::id();
+      session(['usuario_id'=> $id]);
       return view('feed');
     }
     else {

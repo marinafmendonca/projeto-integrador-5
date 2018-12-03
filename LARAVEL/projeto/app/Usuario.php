@@ -11,5 +11,9 @@ class Usuario extends Model implements Authenticatable
   use \Illuminate\Auth\Authenticatable;
   protected $table = 'usuarios';
   protected $primaryKey = 'usuario_id';
-  
+
+  public function posts()
+{
+    return $this->hasMany(Post::class, 'usuario_id', 'usuario_id');
+}
 }

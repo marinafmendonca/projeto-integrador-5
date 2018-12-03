@@ -31,7 +31,7 @@ class Post extends Model
     protected $table = 'posts';
     protected $primaryKey = 'post_id';
 
-    protected $fillable = ['post'];
+    protected $fillable = ['post','usuario_id'];
 
     public function usuario()
     {

@@ -15,7 +15,7 @@ body{
 }
 
 .container-fluid{
-      background-color: #fff;
+      background-color: #fff !important;
       height: 80px;
       }
 

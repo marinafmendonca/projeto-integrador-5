@@ -1,12 +1,12 @@
 <?php
 
-    session_start();
+    /* session_start();
     
   
     if (!isset($_SESSION['usuarioLogado']) || !isset(  $_SESSION['nomeUsuario'] )){
         header('location:\projeto-integrador-5\home.php');
         exit;
-    }
+    } */
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,10 +34,10 @@
               }
           ?>
           <?php
-            if (isset($_SESSION['nomeUsuario'])) {
+            /* if (isset($_SESSION['nomeUsuario'])) {
               $nome= $_SESSION['nomeUsuario'];
               echo "<h2> $nome </h2>";
-            }else{ echo "<h3>Nome - Sobrenome</h3>"; };
+            }else{ echo "<h3>Nome - Sobrenome</h3>"; }; */
            ?>
           <h4>Curso</h4>
           <h4>Campus</h4>
@@ -47,6 +47,6 @@
         </div>
     </div>
   </div>
-  <?php require_once 'footer.php' ?>
+  <!-- <?php require_once 'footer.php' ?> -->
   </body>
 </html>   

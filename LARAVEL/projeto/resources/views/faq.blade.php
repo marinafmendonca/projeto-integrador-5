@@ -8,9 +8,9 @@
   <head>
     <meta charset="utf-8">
     <title>Faq</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link href="css/estilos.css" rel="stylesheet">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link href="/css/estilos.css" rel="stylesheet">
+  <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

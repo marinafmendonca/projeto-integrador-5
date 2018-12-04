@@ -10,11 +10,11 @@
                 </div>
                 
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
-                <button class="btn btn-primary" >
+                <button class="btn btn-lithy" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0" >
                 <i class="material-icons" style="font-size:15px;color:white">perm_media</i>
                 </button>
              
-                  <button type="submit" class="btn btn-primary">Postar</button>
+                  <button type="submit" class="btn btn-lighty" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">Postar</button>
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
       </div>
@@ -35,8 +35,8 @@
                         <div class="card-body">
                          
                             <p class="card-text">{{ $post->post }}</p>
-                            <a href="#" class="btn btn-primary">Editar</a>
-                            <a href="#" class="btn btn-primary">Excluir</a>
+                            <a href="/feed/editarpost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">Editar</a>
+                            <a href="/feed/deletepost/{{$post->post_id}}" class="btn btn-lighty" style= "background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0">Excluir</a>
                         </div>
                 </div>
                 <br>
@@ -50,8 +50,7 @@
     div#publish{ display:block ; margin: auto; border: none;
     border-radius:5px;background: #FFF; box-shadow: 0 0 5px #A1A1A1; margin-top:10px;
     overflow: hidden}
-    
-   
+
     div#publish img{margin-top:0px; margin-left: 10px; width:40px; cursor:pointer;}
    
     </style>

@@ -2,13 +2,16 @@
 <body>
 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link href="css/estilos.css" rel="stylesheet">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  
+  <link rel='stylesheet' href="/css/font-awesome.min.css">
+	<link rel='stylesheet' href="/css/mui.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  <link href="/css/estilos.css" rel="stylesheet">
+  <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
   
    <style type="text/css">
@@ -67,9 +70,9 @@
              
     </nav>
 
-  <script src="js/jquery-3.3.1.slim.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
 </body>
 </html>

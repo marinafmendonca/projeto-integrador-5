@@ -25,7 +25,10 @@ Route::get('/logout', 'UsuarioController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/feed', 'PostController@feed')->middleware('auth');
 Route::post('/createpost', 'PostController@createPost')->middleware ( 'auth' );
-Route::get('/deletepost/{post_id}', 'PostController@deletePost')->middleware ( 'auth' );
+Route::post('/createpostProfile', 'PostController@createpostProfile')->middleware ( 'auth' );
+Route::get('/feed/deletepost/{post_id}', 'PostController@deletePost')->middleware ( 'auth' );
+Route::get('/feed/editarpost/{post_id}', 'PostController@editarPost')->middleware('auth');
+Route::post('/feed/atualiza/{post_id}', 'PostController@atualizar')->middleware('auth');
 
 //PERFIL
 Route::get('/perfil/{id?}', 'UsuarioController@perfil');
@@ -33,6 +36,14 @@ Route::post('/salvarmudancas', 'UsuarioController@salvarMudancas');
 
 //PROFILE
 Route::get('/profile', 'UsuarioController@profile');
+Route::get('/profilePost', 'PostController@feedProfile')->middleware('auth');
+Route::post('/createpostProfile', 'PostController@createpostProfile')->middleware ( 'auth' );
+Route::get('/profile/deletepost/{post_id}', 'PostController@deletePostProfile')->middleware ( 'auth' );
+Route::get('/profile/editarpost/{post_id}', 'PostController@editarPostProfile')->middleware('auth');
+
+
+
+
 
 //FAQ
 Route::get('/faq', 'UsuarioController@faq');

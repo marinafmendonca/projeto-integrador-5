@@ -32,7 +32,7 @@ class UsuarioController extends Controller
 
     Auth::login($usuario);
 
-    return redirect('/feed')->action('PostController@feed');;
+    return redirect('/feed')->action('PostController@feed');
   }
   public function login(Request $request)
   {
@@ -46,7 +46,7 @@ class UsuarioController extends Controller
       // return redirect()->route('feed');
       $id = Auth::id();
       session(['usuario_id'=> $id]);
-      return redirect('/profile');
+      return redirect('/profilePost');
     }
     else {
       return redirect()->back();

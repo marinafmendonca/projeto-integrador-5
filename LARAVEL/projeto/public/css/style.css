@@ -44,6 +44,11 @@ body{margin:0;padding:0;width:100%;}
 	background-color: #ffffff;
 	background-image: url("https://www.pousadacamposdosholandeses.com.br/wp-content/uploads/2014/01/Tarifas-em-Natal-Pousada-Campos-dos-Holandeses-em-Campos-do-Jord%C3%A3o.jpg");
 	background-size:cover;
+	background-position: center;
+    background-size: cover;
+    min-height: 360px;
+    border-radius: 0 0 4px 4px;
+    
 }
 
 .header button{

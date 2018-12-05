@@ -41,11 +41,11 @@
                 </div>
                 
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
-                <button class="btn btn-lithy" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0" >
+                <button class="btn btn-lithy" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0" >
                 <i class="material-icons" style="font-size:15px;color:white">perm_media</i>
                 </button>
              
-                  <button type="submit" class="btn btn-lighty" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">Postar</button>
+                  <button type="submit" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Postar</button>
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
       </div>
@@ -65,8 +65,8 @@
                         <div class="card-body">
                          
                             <p class="card-text">{{ $post->post }}</p>
-                            <a href="/feed/editarpost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">Editar</a>
-                            <a href="/feed/deletepost/{{$post->post_id}}" class="btn btn-lighty" style= "background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0">Excluir</a>
+                            <a href="/feed/editarpost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Editar</a>
+                            <a href="/feed/deletepost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Excluir</a>
                         </div>
                 </div>
                 <br>

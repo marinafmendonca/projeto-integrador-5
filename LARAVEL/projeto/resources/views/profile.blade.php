@@ -36,11 +36,11 @@
 	<div class="opperfil">
 		<center>
 			<!-- Botão "Editar Perfil" -->
-			<button class="btn btn-lighty" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">
+			<button class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">
 				<div class="text">ALTERAR FOTO</div>
 			</button>
 			<!-- Botão "Alterar Password" -->
-			<button class="mui-btn mui-btn--primary" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">
+			<button class="mui-btn mui-btn--primary" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">
 				<div class="text">EDITAR PERFIL</div>
 			</button>
 		</center>
@@ -58,12 +58,12 @@
 				<b>Função:</b> Desenvolvedora
 			</p>
 		</div>
-	<div class="infocandidato">
+	<!-- <div class="infocandidato">
 		<form class="form-inline" >
-			<a class="mui-btn mui-btn--raised" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">FOTOS E VIDEOS</a>
+			<a class="mui-btn mui-btn--raised" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">FOTOS E VIDEOS</a>
 			<a href="/feed" class="mui-btn mui-btn--raised mui-btn--primary"style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">Mensagens</a>
 		</form>
-	</div>
+	</div> -->
 
 	<br/><br/>
 
@@ -78,11 +78,11 @@
                 </div>
 
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
-                <button class="btn btn-lithy" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0" >
+                <button class="btn btn-lithy" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0" >
                 <i class="material-icons" style="font-size:15px;color:white">perm_media</i>
                 </button>
 
-                  <button type="submit" class="btn btn-lighty" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">Postar</button>
+                  <button type="submit" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Postar</button>
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
       </div>
@@ -91,7 +91,7 @@
 
 
   <section class="row posts">
-        <div class="col-md-6 col-md-offset-3"   style="  height:300px; overflow-y: auto">
+        <div class="col-md-6 col-md-offset-3"   style="  height:300px; ">
           @isset($posts)
             <header><h3></h3></header>
             @foreach($posts as $post)
@@ -103,8 +103,8 @@
                         <div class="card-body">
 
                             <p class="card-text">{{ $post->post }}</p>
-                            <a href="/profile/editarpost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0 ">Editar</a>
-                            <a href="/profile/deletepost/{{$post->post_id}}" class="btn btn-lighty" style= "background-color: #ab0127;border-color: #ab0127;color: #fff; margin-bottom: 0">Excluir</a>
+                            <a href="/profile/editarpost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Editar</a>
+                            <a href="/profile/deletepost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Excluir</a>
                         </div>
                 </div>
                 <br>

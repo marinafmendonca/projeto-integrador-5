@@ -30,9 +30,12 @@ class UsuarioController extends Controller
 
     $usuario->save();
 
-    Auth::login($usuario);
 
-    return redirect('/feed')->action('PostController@feed');
+    Auth::login($usuario);
+    $id = Auth::id();
+    session(['usuario_id'=> $id]);
+
+    return redirect('/profilePost');
   }
   public function login(Request $request)
   {

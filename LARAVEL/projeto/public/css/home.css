@@ -1,6 +1,6 @@
 .btn{
-  background-color: #ab0127;
-  border-color: #ab0127;
+  background-color: #7b66f3;
+  border-color: #7b66f3;
   color: #fff;
   }
 
@@ -8,18 +8,18 @@
     display: none;
   }
   .lblBtnFile{
-    background-color: #ab0127;
+    background-color: #7b66f3;
    
   }
   
   .button:hover {
-     background-color: #e7e7e7;
+     background-color: #acecfc;
      text-decoration: none;
      outline:none;
     }
   .button {
-      background-color: #ab0127;
-      border-color: #ab0127;
+      background-color: #7b66f3;
+      border: none;
       color: #fff;
       margin-bottom: 0 !important;
         

@@ -12,22 +12,22 @@ class PostController extends Controller
 {
   public function feed()
   {
-      $posts = Post::orderBy('created_at', 'desc')->get();
+     
       $usuario_id = session('usuario_id');
       $usuario = Usuario::find($usuario_id);
+      $posts = Post::orderBy('created_at', 'desc')->get();
       return view('feed')->with('posts', $posts)->with('usuario',$usuario);
   }
 
 
   public function feedProfile()
   {
-      $posts = Post::orderBy('created_at', 'desc')->get();
+     
       $usuario_id = session('usuario_id');
       $usuario = Usuario::find($usuario_id);
+      $posts = Post::orderBy('created_at', 'desc')->get();
       return view('profile')->with('posts', $posts)->with('usuario',$usuario);
   }
-
-
 
 
 

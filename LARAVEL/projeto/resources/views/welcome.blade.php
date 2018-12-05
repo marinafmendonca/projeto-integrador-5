@@ -47,7 +47,7 @@
                                     </span>
                                 @endif
                     <div class="input-group-append">
-                        <button class="btn button" type="submit" id="button-addon2">Login</button>
+                        <button class="btn button" type="submit" id="button-addon2" style="background-color: #149AC9;color: #fff; margin-bottom: 0">Login</button>
                     </div>
                 </div>
             </form>
@@ -124,7 +124,7 @@
                                             @endif
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">E-mail</label>
-                                                <input type="email" name="email" class="form-control" id="inputEmail14" placeholder="email@email.com" required>
+                                                <input type="email" name="email" class="form-control" id="inputEmail14"  placeholder="email@email.com" required>
                                             </div>
                                             @if ($errors->has('email'))
                                                 <span class="invalid-feedback" role="alert">
@@ -153,9 +153,9 @@
                 
                                                         
                                             <div class="form-group">
-                                                <label for="upload-foto" class="btn button  ">Upload Foto </label>
+                                                <label for="upload-foto" class="btn button" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Upload Foto </label>
                                                 <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
-                                                <button type="submit" class="btn button">Cadastrar</button>
+                                                <button type="submit" class="btn button"style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Cadastrar</button>
                                             </div>
                                            
                                     </form>

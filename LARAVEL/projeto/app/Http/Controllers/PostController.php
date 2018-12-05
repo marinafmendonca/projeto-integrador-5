@@ -15,21 +15,21 @@ class PostController extends Controller
       $posts = Post::orderBy('created_at', 'desc')->get();
       $usuario_id = session('usuario_id');
       $usuario = Usuario::find($usuario_id);
-      return view('feed')->with('posts', $posts);
+      return view('feed')->with('posts', $posts)->with('usuario',$usuario);
   }
-  
-  
+
+
   public function feedProfile()
   {
       $posts = Post::orderBy('created_at', 'desc')->get();
       $usuario_id = session('usuario_id');
       $usuario = Usuario::find($usuario_id);
-      return view('profile')->with('posts', $posts);
+      return view('profile')->with('posts', $posts)->with('usuario',$usuario);
   }
 
 
 
- 
+
 
   public function createpostProfile(Request $request)
   {
@@ -39,18 +39,17 @@ class PostController extends Controller
 
       $post = new Post();
       $post->post = $request['post'];
-      $mensagem = '!!!';
       $usuario_id = session('usuario_id');
-      
+
        $post = Post::create([
           'post'=>$request['post'],
           'usuario_id'=>$usuario_id
         ]);
        $post->save();
        return redirect()->action('PostController@feedProfile');
-    
+
   }
-  
+
 
   public function createPost(Request $request)
     {
@@ -133,4 +132,3 @@ class PostController extends Controller
 
 
 }
-

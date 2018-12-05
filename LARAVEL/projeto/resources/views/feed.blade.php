@@ -2,6 +2,37 @@
 
 @section('content')
 
+
+<aside class="main-sidebar" id="sidebar-wrapper">
+
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+
+<div class="cardLateral card">
+            <div class="photo"></div>
+            <div class="banner"></div>
+            <ul>
+                <li><b>Leila </b></li>
+                <li>CEO: Espião do Governo</li>
+
+            
+            </ul>
+            <button class="contact" id="main-button">Sobre</button>
+           
+
+</div>
+<div class="social-media-banner">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+
+</section>
+<!-- /.sidebar -->
+</aside>
+
+  
   <section class="row new-post">
         <div class="col-md-6 col-md-offset-3">
             <form action="/createpost" method="post">
@@ -21,9 +52,8 @@
   </section>
   
   
-  
   <section class="row posts">
-        <div class="col-md-6 col-md-offset-3"   style="  height:300px; overflow-y: auto">
+        <div class="col-md-6 col-md-offset-3"   style="  height:300px; ">
           @isset($posts)
             <header><h3></h3></header>
             @foreach($posts as $post)

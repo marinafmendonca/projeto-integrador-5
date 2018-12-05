@@ -13,7 +13,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-  
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script  src="js/index.js"></script>
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,700,300'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style2.css">
+    
+    <link rel="stylesheet" href="css/style3.css" media="screen" type="text/css" />
+    <script src="js/modernizr.js"></script>
+
+
    <style type="text/css">
     *{font-family: 'Montserrat'; cursive; margin:0;}
     body{background: white;}

@@ -54,7 +54,9 @@ class UsuarioController extends Controller
   }
   public function profile()
   {
-       return view('profile');
+      $usuario_id = session('usuario_id');
+      $usuario = Usuario::find($usuario_id);
+      return view('profile')->with('usuario', $usuario_id);
   }
 
   public function faq()

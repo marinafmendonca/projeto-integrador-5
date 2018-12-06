@@ -3,7 +3,7 @@
 
 
   
-  <link rel='stylesheet' href="/css/font-awesome.min.css">
+  <link rel='stylesheet' href="/css/postagens.css">
 	<link rel='stylesheet' href="/css/mui.min.css">
     <link rel="stylesheet" href="/css/style.css">
   <link href="/css/estilos.css" rel="stylesheet">
@@ -22,6 +22,8 @@
     
     <link rel="stylesheet" href="css/style3.css" media="screen" type="text/css" />
     <script src="js/modernizr.js"></script>
+
+    <link rel="stylesheet" href="css/postagens.css" media="screen" type="text/css" />
 
 
    <style type="text/css">
@@ -80,9 +82,18 @@
              
     </nav>
 
-  <script src="/js/jquery-3.3.1.slim.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+  
+     
+    <!-- Scripts
+    ================================================= -->
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.sticky-kit.min.js"></script>
+    <script src="js/jquery.scrollbar.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>

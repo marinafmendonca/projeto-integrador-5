@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Usuario;
 
@@ -13,19 +14,34 @@ class PostController extends Controller
   public function feed()
   {
      
-      $usuario_id = session('usuario_id');
-      $usuario = Usuario::find($usuario_id);
-      $posts = Post::orderBy('created_at', 'desc')->get();
-      return view('feed')->with('posts', $posts)->with('usuario',$usuario);
+    $posts = DB::table('posts')
+    ->join('usuarios', function ($join) {
+        $join->on('usuarios.usuario_id', '=', 'posts.usuario_id');
+    })
+    ->select('*')
+    ->orderBy('posts.data_hora', 'desc')
+    ->get();
+
+
+      return view('feed')->with('posts', $posts);
   }
 
 
   public function feedProfile()
   {
-     
-      $usuario_id = session('usuario_id');
-      $usuario = Usuario::find($usuario_id);
-      $posts = Post::orderBy('created_at', 'desc')->get();
+    $usuario_id = session('usuario_id');
+    $usuario = Usuario::find($usuario_id);
+    
+      
+    $posts = DB::table('posts')
+        ->join('usuarios', function ($join) {
+            $join->on('usuarios.usuario_id', '=', 'posts.usuario_id')
+                 ->where('usuarios.usuario_id', '=', Auth::id()  );
+        })
+        ->select('posts.*')
+        ->orderBy('posts.created_at', 'desc')
+        ->get();
+    
       return view('profile')->with('posts', $posts)->with('usuario',$usuario);
   }
 

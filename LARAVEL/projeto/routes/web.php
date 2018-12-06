@@ -29,6 +29,7 @@ Route::post('/createpostProfile', 'PostController@createpostProfile')->middlewar
 Route::get('/feed/deletepost/{post_id}', 'PostController@deletePost')->middleware ( 'auth' );
 Route::get('/feed/editarpost/{post_id}', 'PostController@editarPost')->middleware('auth');
 Route::post('/feed/atualiza/{post_id}', 'PostController@atualizar')->middleware('auth');
+Route::view('lsPostProfile','listaPostProfile')->middleware('auth');
 
 //PERFIL
 Route::get('/perfil/{id?}', 'UsuarioController@perfil');

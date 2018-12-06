@@ -33,47 +33,87 @@
 </aside>
 
   
-  <section class="row new-post">
-        <div class="col-md-6 col-md-offset-3">
-            <form action="/createpost" method="post">
-                <div class="form-group">
-                    <textarea class="form-control" name="post" id="new-post" rows="5" placeholder="Escreva aqui"></textarea>
-                </div>
-                
-                <input type="hidden" value="{{ Session::token() }}" name="_token">
-                <button class="btn btn-lithy" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0" >
-                <i class="material-icons" style="font-size:15px;color:white">perm_media</i>
-                </button>
+  <form action="/createpostProfile" method="post">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-7">
+
+        <!-- Post Mensaggem
+        ================================================= -->
+        <div class="create-post">
+          <div class="row">
+            <div class="col-md-10 col-sm-7">
+              <div class="form-group">
+                <img src="/user-1.jpg" alt="" class="profile-photo-md">
+                <textarea name="post" id="post" cols="80" rows="3" class="form-control" placeholder="Write what you wish"></textarea>
+              </div>
+             <div>
+             <br>
+             <input type="submit" id="btnCadastrar" class="btn btn-primary pull-right" value="Publicar"/>
+             </div>
+              
+            </div>
+            <!-- <div class="col-md-5 col-sm-5">
+              <div class="tools">
+                <ul class="publishing-tools list-inline">
+                  <li><a href="#"><i class="ion-compose"></i></a></li>
+                  <li><a href="#"><i class="ion-images"></i></a></li>
+                </ul>
              
-                  <button type="submit" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Postar</button>
-                <input type="hidden" value="{{ Session::token() }}" name="_token">
-            </form>
-      </div>
-  </section>
+              </div>
+            </div> -->
+          
+          </div>
+          
+        </div><!-- Post Create Box End-->
+</form>
+
   
   
-  <section class="row posts">
-        <div class="col-md-6 col-md-offset-3"   style="  height:300px; ">
-          @isset($posts)
-            <header><h3></h3></header>
-            @foreach($posts as $post)
-            
-            <div class="card">
-                <div class="card-header">
-                    Postado por <strong> {{ $post->usuario->nome }} </strong> em {{ $post->created_at }}
+  <div id="exibePost">
+    @isset($posts)
+ @foreach($posts as $post)
+ <div class="post-content">
+             
+             
+             @if($post->pathimagem)
+              <img src="" alt="post-image" class="img-responsive post-image">
+             @endif
+             
+              <div class="post-container">
+                <img src="{{$post->fotoProfile}}" alt="user" class="profile-photo-md pull-left">
+                <div class="post-detail">
+                  <div class="user-info">
+                    <h5><a href="https://thunder-team.com/friend-finder/timeline.html" 
+                    class="profile-link"> {{$post->nome}}</a> <span class="following">following</span></h5>
+                    <p class="text-muted"> {{ $post->data_hora }}</p>
+                  </div>
+                  <div class="reaction">
+                    <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
+                    <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                  </div>
+
+                  <div class="line-divider"></div>
+                  <div class="post-text">
+                    <p> {{ $post->post }} <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                  </div>
+                  <div class="line-divider"></div>
+                  <div class="post-comment">
+                    <img src="./News Feed _ Check what your friends are doing_files/user-4.jpg" alt="" class="profile-photo-sm">
+                    <p><a href="https://thunder-team.com/friend-finder/timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                  </div>
+                  <div class="post-comment">
+                    <img src="./News Feed _ Check what your friends are doing_files/user-1.jpg" alt="" class="profile-photo-sm">
+                    <input type="text" class="form-control" placeholder="Post a comment">
+                  </div>
                 </div>
-                        <div class="card-body">
-                         
-                            <p class="card-text">{{ $post->post }}</p>
-                            <a href="/feed/editarpost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Editar</a>
-                            <a href="/feed/deletepost/{{$post->post_id}}" class="btn btn-lighty" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Excluir</a>
-                        </div>
-                </div>
-                <br>
-            @endforeach
-            @endisset
-        </div>
-    </section>
+              </div>
+            </div>
+
+      @endforeach
+      @endisset
+    </div>   
+       
 
    
     <style type="text/css">
@@ -85,4 +125,6 @@
    
     </style>
 
+
+  <input type="hidden" value="{{ Session::token() }}" name="_token">
 @endsection

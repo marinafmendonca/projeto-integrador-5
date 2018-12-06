@@ -49,7 +49,7 @@
 	<!-- Título do Perfil -->
 	<div class="tituloperfil">
 		<!-- Nome do Utilizador -->
-		<h1>{{$usuario->nome}}</h1>
+		<h1>{{Auth::user()->nome}}</h1>
 		<div class="bigbriefing">
 			<!-- Briefing do usuário -->
 			<p>

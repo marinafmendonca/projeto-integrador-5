@@ -85,3 +85,6 @@ class UsuarioController extends Controller
       return Auth::guard();
   }
 }
+function seguirPessoa(Request $requeste){
+  
+}

@@ -49,3 +49,9 @@ Route::get('/profile/editarpost/{post_id}', 'PostController@editarPostProfile')-
 //FAQ
 Route::get('/faq', 'UsuarioController@faq');
 
+//PESQUISAS
+Route::post('/pesquisaUsuarios','UsuarioController@pesquisaUsuario');
+
+
+//SEGUIR
+Route::post('/seguirPessoas', 'UsuarioController@seguirPessoas')->middleware('auth');

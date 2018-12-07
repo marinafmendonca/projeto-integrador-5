@@ -1,5 +1,5 @@
 
-
+@csrf
 @isset($listUsuarios)
  @foreach($listUsuarios as $usuario)
  <div class="feed-item">
@@ -19,4 +19,35 @@
  @endforeach
  @endisset
 
- 
+<script>
+
+
+            function seguirPessoa(id){
+        
+        var jsonObject = {
+            "idPessoa": id
+            "_token":  session('_token');
+        };
+    
+            $.ajax
+                ({
+                    type: 'POST',
+                   // dataType: 'html',
+                    url: '/seguirPessoas',
+                    beforeSend: function(){//Chama o loading antes do carregamento
+                          
+                    },
+                    data: jsonObject,
+                    success: function(msg)
+                    {
+                        // loading_hide();
+                        // var data = msg;
+                        // $(div).html(data).fadeIn();
+                       return "Seguindo";				
+                    }
+                }); 
+            
+        }
+
+
+</script>

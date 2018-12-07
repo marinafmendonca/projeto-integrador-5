@@ -85,6 +85,27 @@ class UsuarioController extends Controller
       return Auth::guard();
   }
 }
-function seguirPessoa(Request $requeste){
-  
-}
+ public function pesquisaUsuario(Request $request){
+
+    $parametro = $request['pesquisa'];
+         $listUsuarios =  DB::table('usuarios')
+        ->where('nome', 'like', "%".$parametro."%") ->get();
+        
+        return view('lsUsuariosPesquisa')->with('listUsuarios', $listUsuarios);
+    }
+
+
+    public function seguirPessoas(Request $request){
+        $idPessoa = $request['idPessoa'];
+        $idUsuarioLogado = Auth::id();
+
+          $amigos = new Amigos();
+          $amigos->pessoa1 =  $idUsuarioLogado ;
+          $amigos->pessoa2 =  $idPessoa ;
+
+          if($amigos->save()){
+              return "Seguindo";
+          }
+
+
+    }

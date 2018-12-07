@@ -80,11 +80,12 @@ class UsuarioController extends Controller
       // $request->session()->regenerate();
        return view('welcome');
   }
-    protected function guard()
+  
+  protected function guard()
   {
       return Auth::guard();
   }
-}
+
  public function pesquisaUsuario(Request $request){
 
     $parametro = $request['pesquisa'];
@@ -109,3 +110,4 @@ class UsuarioController extends Controller
 
 
     }
+  }

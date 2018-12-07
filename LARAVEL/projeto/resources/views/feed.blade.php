@@ -9,7 +9,10 @@
 <section class="sidebar">
 
 <div class="cardLateral card">
-            <div class="photo"></div>
+            <div class="photo"> @if(Auth::user()->fotoProfile)
+              <img src="{{Auth::user()->fotoProfile}}" 
+            class="profile-photo-md" alt="post-image"
+            class="img-responsive post-image"> @endif</div>
             <div class="banner"></div>
             <ul>
                 <li><b>{{ Auth::user()->nome}}</b></li>
@@ -44,8 +47,13 @@
           <div class="row">
             <div class="col-md-10 col-sm-7">
               <div class="form-group">
-                <img src="/user-1.jpg" alt="" class="profile-photo-md">
-                <textarea name="post" id="post" cols="80" rows="3" class="form-control" placeholder="Write what you wish"></textarea>
+              @if(Auth::user()->fotoProfile)
+              <img src="{{Auth::user()->fotoProfile}}" 
+            class="profile2-photo-md"> @endif
+            &nbsp; &nbsp;
+                
+          
+             <textarea name="post" id="post" cols="80" rows="2" class="form-control" ></textarea>
               </div>
              <div>
              <br>

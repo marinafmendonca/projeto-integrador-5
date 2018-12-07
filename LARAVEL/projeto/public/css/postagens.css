@@ -203,8 +203,8 @@ html, body {
   img.profile-photo-md{
     height: 150px;
     width: 145px;
-    border-radius: 50%;
-    border: 10px solid #fff;
+    border-radius: 100%;
+    border: 4px solid #fff;
 
   }
   img.profile2-photo-md{

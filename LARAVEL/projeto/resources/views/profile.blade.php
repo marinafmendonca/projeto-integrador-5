@@ -31,10 +31,12 @@
 
 	<!-- Avatar do Utilizador -->
 	<div class="avatar">
-  <h5><img src="{!! asset($usuario->fotoProfile) !!}" 
+  
+  @if($usuario->fotoProfile)
+  <img src="{{$usuario->fotoProfile}}" 
             class="profile-photo-md" alt="post-image"
-            class="img-responsive post-image">  {{ Auth::user()->nome}} </h5>
-	</div>
+            class="img-responsive post-image"> @endif
+ 	</div>
 	<!-- Opções de Conta -->
 	<div class="opperfil">
 		<center>
@@ -91,7 +93,7 @@
             <div class="col-md-10 col-sm-7">
               <div class="form-group">
                 <img src="/user-1.jpg" alt="" class="profile-photo-md">
-                <textarea name="post" id="post" cols="80" rows="3" class="form-control" placeholder="Write what you wish"></textarea>
+                <textarea name="post" id="post" cols="80" rows="3" class="form-control" ></textarea>
               </div>
              <div>
              <br>
@@ -124,9 +126,17 @@
 
             <!--Post Date-->
             <div class="post-date hidden-xs hidden-sm">
-            <h5><img src="{!! asset($usuario->fotoProfile) !!}" 
+            
+            
+            <h5>
+            @if($usuario->fotoProfile)
+            <img src="{!! asset($usuario->fotoProfile) !!}" 
             class="profile2-photo-md pull-left" alt="post-image"
-            class="img-responsive post-image">  {{ Auth::user()->nome}} </h5>
+            class="img-responsive post-image">@endif
+            
+            {{ Auth::user()->nome}} </h5>
+            
+            
             <p class="post-text">  {{ $post->data_hora }}</p>
             </div><!--Post Date End-->
             <div class="post-container">

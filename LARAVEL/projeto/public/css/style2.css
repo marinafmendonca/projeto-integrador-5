@@ -61,10 +61,10 @@ a
     position: relative;
     border-radius: 50%;
     height: 150px;
-    width: 150px;
+    /* width: 150px; */
     background-color: white;
     margin: 0 auto;
-    background-image: url("https://media.licdn.com/dms/image/C4D03AQFWQ0GjkWUu0Q/profile-displayphoto-shrink_800_800/0?e=1549497600&v=beta&t=S8BLOYPXf5mEp9yCpmECRC21fwq83sOPCqMtwb0Dbig");
+    /* background-image: url("https://media.licdn.com/dms/image/C4D03AQFWQ0GjkWUu0Q/profile-displayphoto-shrink_800_800/0?e=1549497600&v=beta&t=S8BLOYPXf5mEp9yCpmECRC21fwq83sOPCqMtwb0Dbig"); */
     background-size: cover;
     background-position: 50% 50%;
     top:75px;

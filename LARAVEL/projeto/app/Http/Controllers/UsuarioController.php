@@ -36,8 +36,6 @@ class UsuarioController extends Controller
     $usuario->password = $password;
 
 
-    
-
     $request->file('fotoPerfil')->move('foto-perfil/',$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension());
     $usuario->fotoProfile = 'foto-perfil/'.$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension();
     $usuario->save();

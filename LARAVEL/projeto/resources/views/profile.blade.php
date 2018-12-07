@@ -58,7 +58,7 @@
 			<p>
 				
 				<b>Cidade:</b> São Paulo <b>|</b>
-				<b>Curso:</b> Web
+				<b>Curso:</b> Web 
 			</p>
 		</div>
 	<!-- <div class="infocandidato">
@@ -79,6 +79,7 @@
   <div id="page-contents">
 
   <form action="/createpostProfile" method="post">
+  @csrf
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-7">

@@ -22,7 +22,7 @@
               background-color:rgba(0,0,0,0.2);
               color: #fff;
           }
-          
+
       </style>
 </head>
 
@@ -39,7 +39,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                    <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" 
+                    <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
                     name="password" placeholder="senha" aria-label="senha">
                     @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -107,7 +107,8 @@
                                 </div>
                             </div>
                             <div class="col-5">
-                                    <form class="formulario_bemvindo" action="/signup" method="post" enctype="multipart/form-data">
+                              <form id="formulario_bemvindo" class="formulario_bemvindo" action="/signup" method="post" enctype="multipart/form-data">
+                                <!-- <form id="formulario_bemvindo" class="formulario_bemvindo" action="" method="post" enctype="multipart/form-data"> -->
                                         @csrf
                                         <label>
                                             <h3>Criar uma nova conta</h3>
@@ -132,8 +133,8 @@
                                                 </span>
                                             @endif
                                         </div>
-                        
-                        
+
+
                                         <div class="form-row ">
                                             <div class="form-group col-md-6">
                                                 <label for="inputSenha">Senha</label>
@@ -150,14 +151,14 @@
                                                 </span>
                                             @endif
                                         </div>
-                
-                                                        
+
+
                                             <div class="form-group">
                                                 <label for="upload-foto" class="btn button" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Upload Foto </label>
                                                 <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
                                                 <button type="submit" class="btn button"style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Cadastrar</button>
                                             </div>
-                                           
+
                                     </form>
                             </div>
                         </div>
@@ -179,7 +180,37 @@
 
 </footer> -->
 
+    <script type="text/javascript">
+      let form = document.getElementById("formulario_bemvindo");
+      let password = document.getElementById("password");
+      let confirmarPassword = document.getElementById("confirmarPassword");
+      form.onsubmit = function(e) {
+        // e.preventDefault();
+        let erros = [];
+        let check = {};
+        if(password.value!=confirmarPassword.value) erros.push("Senhas estão diferentes!")
+        for (let i = 0; i < form.elements.length; i++) {
+          let elemento = form.elements[i];
+          switch(elemento.type){
+            case "submit":
+            case "hidden":
+            case "file":
+            break;
+            default:
+              if(!elemento.value){
+                erros.push(elemento.name+" está em branco!");
+              }
+            break;
+          }
+        }
 
+        if(erros.length > 0){
+          alert("Erros:\r-"+erros.join("\r-"));
+        }
+
+
+      }
+    </script>
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

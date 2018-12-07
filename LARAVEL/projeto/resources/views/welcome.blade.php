@@ -107,15 +107,16 @@
                                 </div>
                             </div>
                             <div class="col-5">
-                                    <form class="formulario_bemvindo" action="/signup" method="post" enctype="multipart/form-data">
+                                    <form id="formulario_bemvindo" class="formulario_bemvindo" action="/signup" method="post" enctype="multipart/form-data">
                                         @csrf
+                                                                                   
                                         <label>
                                             <h3>Criar uma nova conta</h3>
                                         </label>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputNomel4">Nome</label>
-                                                <input type="text" name="nome" class="form-control" id="inputNome" placeholder="" required>
+                                                <label for="inputNome">Nome</label>
+                                                <input type="text" name="nome" class="form-control" id="inputNome" placeholder="" >
                                             </div>
                                             @if ($errors->has('nome'))
                                                 <span class="invalid-feedback" role="alert">
@@ -123,8 +124,8 @@
                                                 </span>
                                             @endif
                                             <div class="form-group col-md-6">
-                                                <label for="inputPassword4">E-mail</label>
-                                                <input type="email" name="email" class="form-control" id="inputEmail14"  placeholder="email@email.com" required>
+                                                <label for="inputEmail">E-mail</label>
+                                                <input type="email" name="email" class="form-control" id="inputEmail"  placeholder="email@email.com" >
                                             </div>
                                             @if ($errors->has('email'))
                                                 <span class="invalid-feedback" role="alert">
@@ -132,17 +133,16 @@
                                                 </span>
                                             @endif
                                         </div>
-                        
-                        
+                                        
                                         <div class="form-row ">
                                             <div class="form-group col-md-6">
-                                                <label for="inputSenha">Senha</label>
-                                                <input type="password" name="password" class="form-control" id="password" placeholder="*******" required>
+                                                <label for="password">Senha</label>
+                                                <input type="password" name="password" class="form-control" id="password" placeholder="*******" >
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="inputSenha2">Confirmar Senha</label>
+                                                <label for="confirmarPassword">Confirmar Senha</label>
                                                 <input type="password" name="confirmarPassword" class="form-control" id="confirmarPassword"
-                                                    placeholder="*******" required>
+                                                    placeholder="*******" >
                                             </div>
                                             @if ($errors->has('password'))
                                                 <span class="invalid-feedback" role="alert">
@@ -155,7 +155,9 @@
                                             <div class="form-group">
                                                 <label for="upload-foto" class="btn button" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Upload Foto </label>
                                                 <input type="file" accept="image/*" id="upload-foto" name="fotoPerfil">
-                                                <button type="submit" class="btn button"style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Cadastrar</button>
+                                                <button type="submit" 
+                                                class="btn button" 
+                                                style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Cadastrar</button>
                                             </div>
                                            
                                     </form>
@@ -178,7 +180,7 @@
     </div>
 
 </footer> -->
-
+ 
 
     <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>

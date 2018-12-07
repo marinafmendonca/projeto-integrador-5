@@ -201,6 +201,13 @@ html, body {
   }
   
   img.profile-photo-md{
+    height: 150px;
+    width: 145px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+
+  }
+  img.profile2-photo-md{
       height: 50px;
       width: 50px;
       border-radius: 50%;
@@ -210,12 +217,16 @@ html, body {
       height: 40px;
       width: 40px;
       border-radius: 50%;
+
+      
   }
   
   img.profile-photo-xs{
     height: 30px;
     width: 30px;
     border-radius: 50%;
+    
+    
   }
   
   .img-wrapper{
@@ -290,7 +301,7 @@ html, body {
     box-shadow: none;
     border-radius: 4px;
     color: #939598;
-    width: 100% !important;
+    /* width: 100% !important; */
   }
   
   .screen-reader-text{

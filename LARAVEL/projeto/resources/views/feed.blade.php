@@ -12,7 +12,7 @@
             <div class="photo"></div>
             <div class="banner"></div>
             <ul>
-                <li><b>Leila </b></li>
+                <li><b>{{ Auth::user()->nome}}</b></li>
                 <li>CEO: Espião do Governo</li>
 
             
@@ -81,7 +81,7 @@
              @endif
              
               <div class="post-container">
-                <img src="{{$post->fotoProfile}}" alt="user" class="profile-photo-md pull-left">
+                <img src="{{$post->fotoProfile}}" alt="user" class="profile2-photo-md pull-left">
                 <div class="post-detail">
                   <div class="user-info">
                     <h5><a href="https://thunder-team.com/friend-finder/timeline.html" 

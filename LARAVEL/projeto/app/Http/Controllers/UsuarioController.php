@@ -15,11 +15,19 @@ class UsuarioController extends Controller
   }
 
   public function signUp(Request $request)
-  {
-    $nome = $request['nome'];
-    $email = $request['email'];
-    $password = bcrypt($request['password']);
-    $confirmaSenha = bcrypt($request['confirmaPassword']);
+  {	
+    $mensagens = [
+          'fotoPerfil.required' => 'Você não colocou a imagem no texto.',
+          'fotoPerfil.mimes' => 'Somente imagem no formato de jpeg e png.',
+        ];
+        $this->validate($request,[
+          'fotoPerfil' => 'required|mimes:jpeg,png',
+        ],$mensagens);
+  
+      $nome = $request['nome'];
+      $email = $request['email'];
+      $password = bcrypt($request['password']);
+      $confirmaSenha = bcrypt($request['confirmaPassword']);  
 
 
     $usuario = new Usuario();
@@ -28,6 +36,10 @@ class UsuarioController extends Controller
     $usuario->password = $password;
 
 
+    
+
+    $request->file('fotoPerfil')->move('foto-perfil/',$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension());
+    $usuario->fotoProfile = 'foto-perfil/'.$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension();
     $usuario->save();
 
 

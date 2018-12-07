@@ -31,6 +31,9 @@
 
 	<!-- Avatar do Utilizador -->
 	<div class="avatar">
+  <h5><img src="{!! asset($usuario->fotoProfile) !!}" 
+            class="profile-photo-md" alt="post-image"
+            class="img-responsive post-image">  {{ Auth::user()->nome}} </h5>
 	</div>
 	<!-- Opções de Conta -->
 	<div class="opperfil">
@@ -53,8 +56,8 @@
 		<div class="bigbriefing">
 			<!-- Briefing do usuário -->
 			<p>
-				<b>Idade:</b> 1999 <b>|</b>
-				<b>Distrito:</b> São Paulo <b>|</b>
+				
+				<b>Cidade:</b> São Paulo <b>|</b>
 				<b>Curso:</b> Web
 			</p>
 		</div>
@@ -120,8 +123,8 @@
 
             <!--Post Date-->
             <div class="post-date hidden-xs hidden-sm">
-            <h5><img src="https://images.tcdn.com.br/img/img_prod/460618/natal_gourmet_93_1_20161208150229.jpg" 
-            class="profile-photo-md" alt="post-image"
+            <h5><img src="{!! asset($usuario->fotoProfile) !!}" 
+            class="profile2-photo-md pull-left" alt="post-image"
             class="img-responsive post-image">  {{ Auth::user()->nome}} </h5>
             <p class="post-text">  {{ $post->data_hora }}</p>
             </div><!--Post Date End-->

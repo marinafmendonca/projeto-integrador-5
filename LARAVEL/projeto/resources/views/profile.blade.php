@@ -59,8 +59,8 @@
 			<!-- Briefing do usuário -->
 			<p>
 				
-				<b>Cidade:</b> São Paulo <b>|</b>
-				<b>Curso:</b> Web 
+				<b>Cidade:</b> {{Auth::user()->cidade}} <b>|</b>
+				<b>Estado:</b> {{Auth::user()->estado}} 
 			</p>
 		</div>
 	<!-- <div class="infocandidato">
@@ -92,7 +92,7 @@
           <div class="row">
             <div class="col-md-10 col-sm-7">
               <div class="form-group">
-                <img src="/user-1.jpg" alt="" class="profile-photo-md">
+               
                 <textarea name="post" id="post" cols="80" rows="3" class="form-control" ></textarea>
               </div>
              <div>

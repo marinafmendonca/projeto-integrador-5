@@ -3,11 +3,7 @@
 @section('content')
 
 
-<aside class="main-sidebar" id="sidebar-wrapper">
-
-<!-- sidebar: style can be found in sidebar.less -->
-<section class="sidebar">
-
+<div class="col-md-1">
 <div class="cardLateral card">
             <div class="photo"> @if(Auth::user()->fotoProfile)
               <img src="{{Auth::user()->fotoProfile}}" 
@@ -16,7 +12,7 @@
             <div class="banner"></div>
             <ul>
                 <li><b>{{ Auth::user()->nome}}</b></li>
-                <li>CEO: Espião do Governo</li>
+                <li>Analise e Desenvolvimento de Sistemas</li>
 
             
             </ul>
@@ -30,13 +26,12 @@
                 <a href=""><i class="fa fa-instagram"></i></a>
                 <a href=""><i class="fa fa-linkedin"></i></a>
             </div>
+</div>
 
-</section>
-<!-- /.sidebar -->
-</aside>
 
   
-  <form action="/createpostProfile" method="post">
+  <form action="/createpost" method="post">
+  @csrf
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-7">

@@ -17,35 +17,31 @@ class UsuarioController extends Controller
   public function signUp(Request $request)
   {	
     $mensagens = [
-          'fotoPerfil.required' => 'Você não colocou a imagem no texto.',
+          'fotoPerfil.required' => 'Foto Obrigatoria.',
           'fotoPerfil.mimes' => 'Somente imagem no formato de jpeg e png.',
         ];
         $this->validate($request,[
           'fotoPerfil' => 'required|mimes:jpeg,png',
         ],$mensagens);
   
-      $nome = $request['nome'];
-      $email = $request['email'];
-      $password = bcrypt($request['password']);
+      $usuario = new Usuario();
+      $usuario->nome = $request['nome'];
+      $usuario->email = $request['email'];
+      $usuario->password  = bcrypt($request['password']);
       $confirmaSenha = bcrypt($request['confirmaPassword']);  
+      $usuario->estado = $request['estado'];
+      $usuario->cidade = $request['cidade'];
+      $request->file('fotoPerfil')->move('foto-perfil/',$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension());
+      $usuario->fotoProfile = 'foto-perfil/'.$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension();
+   
+      $usuario->save();
 
 
-    $usuario = new Usuario();
-    $usuario->nome = $nome;
-    $usuario->email = $email;
-    $usuario->password = $password;
+     Auth::login($usuario);
+     $id = Auth::id();
+     session(['usuario_id'=> $id]);
 
-
-    $request->file('fotoPerfil')->move('foto-perfil/',$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension());
-    $usuario->fotoProfile = 'foto-perfil/'.$usuario->usuario_id.'.'.$request->file('fotoPerfil')->getClientOriginalExtension();
-    $usuario->save();
-
-
-    Auth::login($usuario);
-    $id = Auth::id();
-    session(['usuario_id'=> $id]);
-
-    return redirect('/profilePost');
+     return redirect('/profilePost');
   }
   public function login(Request $request)
   {

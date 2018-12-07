@@ -19,7 +19,11 @@ class CreateUsuariosTable extends Migration
           $table->string('email')->unique();
           $table->timestamp('email_verified_at')->nullable();
           $table->string('password');
-          // $table->boolean('ativo');
+          $table->timestamps('data_hora')->nullable();
+          $table->binary('fotoProfile')->nullable();
+          $table->string('estado')->nullable();
+          $table->string('cidade')->nullable();
+          $table->boolean('ativo');
           $table->rememberToken();
           $table->timestamps();
         });

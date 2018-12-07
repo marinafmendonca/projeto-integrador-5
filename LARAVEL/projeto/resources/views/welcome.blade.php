@@ -5,8 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <title>talkHouse</title>
-
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    
+    
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Util.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
      <link rel="stylesheet" href="css/home.css">
     <style>
         main{
@@ -153,6 +162,24 @@
                                             @endif
                                         </div>
 
+                                        <div class="form-row">
+                                            
+                                                <div class="form-group col-md-6">
+                                                    <label for="estado">Estado*</label>
+                                                    <select type="text" class="form-control" id="estado" maxlength="40"  name="estado" required>
+                                                    </select>
+                                                    
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="estado">Cidade*</label>
+                                                    <select type="text" class="form-control" id="cidade" maxlength="40"  name="cidade" required>
+                                                    </select>
+                                                </div>
+                                        </div>
+
+                                      
+
 
                                             <div class="form-group">
                                                 <label for="upload-foto" class="btn button" style="background-color: #149AC9; ;color: #fff; margin-bottom: 0">Upload Foto </label>
@@ -213,10 +240,8 @@
 
 
       }
-    </script>
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+      </script>
+ 
 </body>
 
 </html>

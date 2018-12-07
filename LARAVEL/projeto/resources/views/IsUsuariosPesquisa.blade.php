@@ -1,5 +1,5 @@
 
-@csrf
+
 @isset($listUsuarios)
  @foreach($listUsuarios as $usuario)
  <div class="feed-item">
@@ -11,8 +11,8 @@
                                         class="profile2-photo-md"/> 
                       @endif
                 
-                      <p>{{$usuario->nome}} - {{$usuario->usuario_id}} </p>
-                    <input type="button" value="Seguir" onclick="seguirPessoa({{$usuario->usuario_id}})" class="btn"/>
+                      <p>{{$usuario->nome}} </p>
+                    <input type="button" value="Seguir" onclick="seguirPessoa({{$usuario->usuario_id}}, {{ Session::token() }})" class="btn"/>
                     <p class="text-muted"></p>
                   </div>
 </div>
@@ -21,12 +21,11 @@
 
 <script>
 
-
-            function seguirPessoa(id){
+function seguirPessoa(id, token){
         
         var jsonObject = {
             "idPessoa": id
-            "_token":  session('_token');
+            "_token": token
         };
     
             $.ajax
